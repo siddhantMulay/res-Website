@@ -1,0 +1,55 @@
+.header {
+  line-height: 1.5;
+  padding-bottom: 15px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+.header .homeNav {
+  background: none;
+  box-shadow: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  padding-top: 7px;
+}
+.header .headerData {
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+.header.homeNavVisible .headerData {
+  transform: translateX(50px);
+  -webkit-transform: translateX(50px);
+}
+.header.homeNavVisible a {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+}
+.header.homeNavInVisible .headerData {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+}
+.header.homeNavInVisible a {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-10px);
+  -webkit-transform: translateX(-10px);
+}
+.header a {
+  text-decoration: none;
+  color: black;
+  width: 0px;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+.header .headerText {
+  font-size: 24px;
+}
+.header .subHeaderText {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+}

@@ -1,0 +1,66 @@
+html,
+body {
+  overflow: hidden;
+}
+
+html *,
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38b6ff;
+}
+
+.pageBody {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem;
+}
+
+.pageBody * {
+  font-family: 'Josefin Sans';
+}
+
+.pageContent {
+  height: calc(100vh - 270px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pageContent.bucketContent {
+  padding-left: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .pageBody {
+    padding: 25px;
+  }
+  .pageContent {
+    height: calc(100vh - 180px);
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  .pageBody {
+    padding: 25px;
+  }
+  .pageContent {
+    height: calc(100vh - 180px);
+  }
+}
