@@ -1,0 +1,184 @@
+@import '../../../styles/variables.scss';
+
+.header {
+    background     : $white;
+    padding        : 25px 35px;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+
+    .menuIcon {
+        position: relative;
+
+        &::before,
+        &::after {
+            content         : "";
+            position        : absolute;
+            height          : 3px;
+            background-color: $black;
+            width           : 25px;
+        }
+
+        &::before {
+            top: -7px;
+        }
+
+        &::after {
+            top: 3px;
+        }
+
+    }
+
+    .logo {
+        height: $logoDim;
+        width : $logoDim;
+
+        img {
+            object-fit: contain;
+            height    : 100%;
+            width     : 100%;
+        }
+    }
+
+
+    .iconAction {
+        &.menu {
+            display: none;
+            width  : 42px;
+            height : 20px;
+        }
+    }
+
+    .navItems {
+        .nav {
+            font-size      : 13px;
+            font-weight    : $bold;
+            letter-spacing : 0.2px;
+            text-decoration: none;
+            text-transform : uppercase;
+            padding        : 0 5px;
+            margin         : 0 10px;
+            color          : $black;
+            position       : relative;
+
+            &.active,
+            &:hover {
+                z-index: 1;
+
+                &::before,
+                &::after {
+                    content           : "";
+                    position          : absolute;
+                    height            : 0px;
+                    background-color  : $white;
+                    width             : 0px;
+                    left              : 0;
+                    bottom            : 0;
+                    transition        : all 0.5s ease;
+                    -webkit-transition: all 0.5s ease;
+                    z-index           : -1;
+                }
+
+                &::after {
+                    background-color: $activeCol;
+                    height          : 9px;
+                    width           : 100%;
+                }
+            }
+        }
+
+        .iconAction {
+            margin: 0 4px;
+
+            &:last-child {
+                margin-right: 0px
+            }
+        }
+
+        .badge {
+            position       : absolute;
+            font-size      : 10px;
+            font-weight    : bold;
+            background     : $primaryCol;
+            width          : 18px;
+            height         : 18px;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            border-radius  : 50%;
+            top            : -6px;
+            right          : 0px;
+        }
+    }
+}
+
+.subHeader {
+    height         : 45px;
+    background     : #ffffff;
+    border-top     : 1px solid #ddd;
+    justify-content: center;
+    display        : none;
+
+    .subHeadNav {
+        width          : 120px;
+        font-size      : 13px;
+        font-weight    : $bold;
+        letter-spacing : 0.2px;
+        text-decoration: none;
+        text-transform : uppercase;
+        margin         : 0 8px;
+        color          : $black;
+        position       : relative;
+        cursor         : pointer;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        &.active,
+        &:hover {
+            background: $primaryCol;
+            color     : $white;
+        }
+    }
+}
+
+//Mobile devices
+@media screen and (max-width: 600px) {
+    .header {
+        padding: 14px 15px !important;
+
+        .logo {
+            height: 32px;
+            width : auto;
+        }
+    }
+}
+
+//Min-Width
+@media screen and (max-width: 992px) {
+    .header {
+        padding: 14px 35px;
+
+
+        .iconAction {
+            &.menu {
+                display: flex;
+            }
+        }
+
+        .navItems {
+            .nav {
+                display: none;
+            }
+        }
+    }
+
+    .subHeader {
+        display: flex;
+    }
+}

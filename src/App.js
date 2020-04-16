@@ -6,17 +6,19 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './styles/common.scss';
 
 //Index file import
-import Landing from './pages/Landing';
+import Header from './components/Common/Header/Header';
+import Base from './pages/Base';
 
 function App() {
-  
+
   return (
+    <div className="pageBody">
+      <Header />
       <Router>
-        <div className="pageBody">
-          <Route path='/' component={Landing} />
-          <Redirect to='/home' />
-        </div>
+        <Route path='/' component={Base} />
+        <Redirect to='/home' />
       </Router>
+    </div>
   );
 }
 

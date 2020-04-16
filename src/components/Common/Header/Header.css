@@ -1,55 +1,180 @@
 .header {
-  line-height: 1.5;
-  padding-bottom: 15px;
-  position: relative;
+  background: #ffffff;
+  padding: 25px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.header .homeNav {
-  background: none;
-  box-shadow: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  outline: none;
-  padding-top: 7px;
+
+.header .menuIcon {
+  position: relative;
 }
-.header .headerData {
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
+
+.header .menuIcon::before, .header .menuIcon::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: #000000;
+  width: 25px;
 }
-.header.homeNavVisible .headerData {
-  transform: translateX(50px);
-  -webkit-transform: translateX(50px);
+
+.header .menuIcon::before {
+  top: -7px;
 }
-.header.homeNavVisible a {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateX(0px);
-  -webkit-transform: translateX(0px);
+
+.header .menuIcon::after {
+  top: 3px;
 }
-.header.homeNavInVisible .headerData {
-  transform: translateX(0px);
-  -webkit-transform: translateX(0px);
+
+.header .logo {
+  height: 48px;
+  width: 48px;
 }
-.header.homeNavInVisible a {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-10px);
-  -webkit-transform: translateX(-10px);
+
+.header .logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
 }
-.header a {
+
+.header .iconAction.menu {
+  display: none;
+  width: 42px;
+  height: 20px;
+}
+
+.header .navItems .nav {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
   text-decoration: none;
-  color: black;
+  text-transform: uppercase;
+  padding: 0 5px;
+  margin: 0 10px;
+  color: #000000;
+  position: relative;
+}
+
+.header .navItems .nav.active, .header .navItems .nav:hover {
+  z-index: 1;
+}
+
+.header .navItems .nav.active::before, .header .navItems .nav.active::after, .header .navItems .nav:hover::before, .header .navItems .nav:hover::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  background-color: #ffffff;
   width: 0px;
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  z-index: -1;
 }
-.header .headerText {
-  font-size: 24px;
+
+.header .navItems .nav.active::after, .header .navItems .nav:hover::after {
+  background-color: #feeaa1;
+  height: 9px;
+  width: 100%;
 }
-.header .subHeaderText {
-  font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+
+.header .navItems .iconAction {
+  margin: 0 4px;
+}
+
+.header .navItems .iconAction:last-child {
+  margin-right: 0px;
+}
+
+.header .navItems .badge {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  background: #ffd541;
+  width: 18px;
+  height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  top: -6px;
+  right: 0px;
+}
+
+.subHeader {
+  height: 45px;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+
+.subHeader .subHeadNav {
+  width: 120px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 8px;
+  color: #000000;
+  position: relative;
+  cursor: pointer;
+}
+
+.subHeader .subHeadNav:first-child {
+  margin-left: 0px;
+}
+
+.subHeader .subHeadNav:last-child {
+  margin-right: 0px;
+}
+
+.subHeader .subHeadNav.active, .subHeader .subHeadNav:hover {
+  background: #ffd541;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 14px 15px !important;
+  }
+  .header .logo {
+    height: 32px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    padding: 14px 35px;
+  }
+  .header .iconAction.menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header .navItems .nav {
+    display: none;
+  }
+  .subHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }

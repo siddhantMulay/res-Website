@@ -1,6 +1,7 @@
+
 import React, { Component } from 'react';
 
-class Landing extends Component {
+class Base extends Component {
 
     render() {
         const { buttonText,
@@ -15,4 +16,4 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+export default Base;

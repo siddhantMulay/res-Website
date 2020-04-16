@@ -1,36 +1,58 @@
 
 import React, { Component } from 'react';
 import './Header.css';
-import { Icon } from '@iconify/react';
-import arrowLeft from '@iconify/icons-feather/arrow-left';
-import { currentBucket } from '../../../redux/actions/globalActions';
-import { Link } from 'react-router-dom';
+import Logo from '../../../assets/images/Logo.png';
+import LineIcon from 'react-lineicons';
 
 class Header extends Component {
 
     render() {
-        const { headerText,
-            subHeaderText,
-            homeNav } = this.props;
         return (
-            <div className={`header ${homeNav ? 'homeNavVisible' : 'homeNavInVisible'}`}>
-                <Link to='/home'>
-                    <button className="homeNav"
-                        onClick={() => currentBucket('', '', '', true)}
-                    >
-                        <Icon icon={arrowLeft} />
+            <div className="pageHeader">
+                <div className="header">
+                    <button className="iconAction menu">
+                        <span className="menuIcon"></span>
                     </button>
-                </Link>
-                <div className="headerData">
-                    <div className="headerText">
-                        {headerText}
+
+                    <div className="logo">
+                        <img src={Logo} alt="" />
                     </div>
-                    <div className="subHeaderText">
-                        {subHeaderText}
+
+                    <div className="navItems">
+                        <a className="nav active" href="#">Bedroom</a>
+                        <a className="nav" href="#">Living Room</a>
+                        <a className="nav" href="#">Office</a>
+                        <a className="nav" href="#">Kitchen</a>
+                        <a className="nav" href="#">Bathroom</a>
+                        <button className="iconAction">
+                            <LineIcon name="search-alt" />
+                        </button>
+                        <button className="iconAction">
+                            <LineIcon name="heart" />
+                        </button>
+                        <button className="iconAction">
+                            <LineIcon name="cart" />
+                            <div className="badge">
+                                2
+                        </div>
+                        </button>
                     </div>
                 </div>
+                <div className="subHeader">
+                    <button className="subHeadNav active">
+                        Details
+                    </button>
+                    <button className="subHeadNav">
+                        Description
+                    </button>
+                    <button className="subHeadNav">
+                        Reviews
+                    </button>
+                    <button className="subHeadNav">
+                        Related
+                    </button>
+                </div>
             </div>
-
         )
     }
 }
