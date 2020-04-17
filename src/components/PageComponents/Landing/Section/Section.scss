@@ -96,6 +96,70 @@
                 }
             }
         }
+
+        .colorSelection {
+            display    : flex;
+            align-items: center;
+            padding    : 10px 0;
+
+            .colorSelect {
+                width        : 25px;
+                height       : 25px;
+                border-radius: 50%;
+                margin       : 0px 10px 0px 0px;
+                cursor       : pointer;
+                position     : relative;
+
+                &.beige {
+                    background: #dad5ab;
+                }
+
+                &.black {
+                    background: $black;
+                }
+
+                &.white {
+                    background: $white;
+                    border    : 1px solid #ddd;
+                }
+
+                input[type=radio] {
+                    margin : 0px 10px 0px 0px;
+                    width  : 100%;
+                    height : 100%;
+                    opacity: 0;
+                    cursor : pointer;
+
+                    &:last-child {
+                        margin: 0px;
+                    }
+
+                    &:checked~.checkMark {
+                        &.white {
+                            &::after {
+                                border: solid $black;
+                                top   : 6px;
+                                right : 9px;
+                            }
+                        }
+
+                        &::after {
+                            content     : '';
+                            display     : block;
+                            width       : 5px;
+                            height      : 9px;
+                            border      : solid #ffffff;
+                            border-width: 0 2px 2px 0 !important;
+                            transform   : rotate(45deg);
+                            position    : absolute;
+                            top         : 7px;
+                            right       : 10px;
+                            z-index     : 3;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -6,6 +6,8 @@ import LineIcon from 'react-lineicons';
 
 class Section extends Component {
 
+    radioCheck = () => { }
+
     render() {
         return (
             <div className="section">
@@ -60,11 +62,31 @@ class Section extends Component {
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div className="color">
                                 <div className="title">Color:</div>
-                                <div className="colorSelection">
 
+                                <div className="colorSelection">
+                                    <div className="colorSelect beige">
+                                        <input type="radio" name="colorsel" id="" onChange={this.radioCheck} />
+                                        <div className="checkMark"></div>
+                                    </div>
+                                    <div className="colorSelect black">
+                                        <input type="radio" name="colorsel" id="" checked onChange={this.radioCheck} />
+                                        <div className="checkMark"></div>
+                                    </div>
+                                    <div className="colorSelect white">
+                                        <input type="radio" name="colorsel" id="" onChange={this.radioCheck} />
+                                        <div className="checkMark white"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="cardActions">
+                                <div className="counter">
+                                    <LineIcon name="minus" />
+                                    <input type="text" />
+                                    <LineIcon name="plus" />
                                 </div>
                             </div>
                         </div>
