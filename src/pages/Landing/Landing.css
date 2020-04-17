@@ -1,0 +1,10 @@
+.landingContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.landingContent .allSections {
+  width: calc(100vw - 312px);
+  padding-left: 5rem;
+}

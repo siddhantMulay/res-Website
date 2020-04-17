@@ -39,6 +39,10 @@ body * {
   font-family: "Open Sans", sans-serif;
 }
 
+a {
+  cursor: pointer;
+}
+
 .text {
   font-size: 13px;
   font-weight: 700;

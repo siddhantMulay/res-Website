@@ -1,0 +1,82 @@
+@import '../../../styles/variables.scss';
+
+.sidebar {
+    height         : calc(100vh - 180px);
+    min-width      : $sidebarWid;
+    display        : flex;
+    align-items    : center;
+    justify-content: flex-end;
+    position       : relative;
+
+    .currentView {
+        transform        : rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        color            : $white;
+        font-weight      : $bold;
+        font-size        : 10rem;
+        position         : fixed;
+        left             : -10rem;
+        top              : 25.5rem;
+        z-index          : 2;
+        max-width        : 556px;
+
+        &.descActive {
+            font-size: 6.3rem;
+        }
+    }
+
+    .pageNav {
+        a {
+            text-align   : right;
+            display      : block;
+            position     : relative;
+            margin-bottom: 5rem;
+
+            &.active,
+            &:hover {
+                z-index: 1;
+
+                &::before,
+                &::after {
+                    content           : "";
+                    position          : absolute;
+                    height            : 0px;
+                    background-color  : $white;
+                    width             : 0px;
+                    right             : 0;
+                    bottom            : 0;
+                    transition        : all 0.5s ease;
+                    -webkit-transition: all 0.5s ease;
+                    z-index           : -1;
+                }
+
+                &::after {
+                    background-color: $activeCol;
+                    height          : 9px;
+                    width           : 100vw;
+                }
+            }
+        }
+
+        .socialLinks {
+            a {
+                display     : initial;
+                margin-right: 28px;
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+//Mobile devices
+@media screen and (max-width: 1200px) {
+    .sidebar {
+
+        .currentView {
+            display: none;
+        }
+    }
+}

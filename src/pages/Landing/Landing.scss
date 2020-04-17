@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.landingContent {
+    display: flex;
+
+    .allSections {
+        width       : $landingWid;
+        padding-left: 5rem;
+    }
+}

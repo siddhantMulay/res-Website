@@ -1,0 +1,76 @@
+.sidebar {
+  height: calc(100vh - 180px);
+  min-width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.sidebar .currentView {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 10rem;
+  position: fixed;
+  left: -10rem;
+  top: 25.5rem;
+  z-index: 2;
+  max-width: 556px;
+}
+
+.sidebar .currentView.descActive {
+  font-size: 6.3rem;
+}
+
+.sidebar .pageNav a {
+  text-align: right;
+  display: block;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.sidebar .pageNav a.active, .sidebar .pageNav a:hover {
+  z-index: 1;
+}
+
+.sidebar .pageNav a.active::before, .sidebar .pageNav a.active::after, .sidebar .pageNav a:hover::before, .sidebar .pageNav a:hover::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  background-color: #ffffff;
+  width: 0px;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.sidebar .pageNav a.active::after, .sidebar .pageNav a:hover::after {
+  background-color: #feeaa1;
+  height: 9px;
+  width: 100vw;
+}
+
+.sidebar .pageNav .socialLinks a {
+  display: initial;
+  margin-right: 28px;
+}
+
+.sidebar .pageNav .socialLinks a:last-child {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar .currentView {
+    display: none;
+  }
+}
