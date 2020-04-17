@@ -29,6 +29,10 @@ body * {
   background: #ffd541;
 }
 
+img {
+  max-width: 100%;
+}
+
 .pageBody {
   padding-left: 50px;
   max-width: 1920px;

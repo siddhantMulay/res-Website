@@ -6,7 +6,7 @@
 
 .landingContent .allSections {
   width: 80%;
-  padding-left: 5rem;
+  padding: 3rem 0 0 5rem;
 }
 
 @media screen and (max-width: 992px) {

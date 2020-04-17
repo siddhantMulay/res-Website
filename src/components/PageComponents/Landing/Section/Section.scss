@@ -1,5 +1,11 @@
 @import '../../../../styles/variables.scss';
 
-.section{
-    
+.section {
+    background : $white;
+    margin-left: 3rem;
+
+    .row {
+        padding  : 3rem;
+        transform: translate(-90px);
+    }
 }
