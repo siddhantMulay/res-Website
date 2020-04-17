@@ -51,14 +51,8 @@
 
     .navItems {
         .nav {
-            font-size      : 13px;
-            font-weight    : $bold;
-            letter-spacing : 0.2px;
-            text-decoration: none;
-            text-transform : uppercase;
             padding        : 0 5px;
             margin         : 0 10px;
-            color          : $black;
             position       : relative;
 
             &.active,
@@ -121,13 +115,7 @@
 
     .subHeadNav {
         width          : 120px;
-        font-size      : 13px;
-        font-weight    : $bold;
-        letter-spacing : 0.2px;
-        text-decoration: none;
-        text-transform : uppercase;
         margin         : 0 8px;
-        color          : $black;
         position       : relative;
         cursor         : pointer;
 

@@ -39,6 +39,15 @@ body * {
   font-family: "Open Sans", sans-serif;
 }
 
+.text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+
 button {
   border: none;
   background: transparent;

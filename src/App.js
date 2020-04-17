@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //Styles
 import './styles/common.scss';
 
 //Index file import
 import Header from './components/Common/Header/Header';
-import Base from './pages/Base';
+import Landing from './pages/Landing';
 
 function App() {
 
@@ -15,8 +15,7 @@ function App() {
     <div className="pageBody">
       <Header />
       <Router>
-        <Route path='/' component={Base} />
-        <Redirect to='/home' />
+        <Route path='/' component={Landing} />
       </Router>
     </div>
   );

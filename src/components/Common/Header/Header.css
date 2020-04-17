@@ -51,14 +51,8 @@
 }
 
 .header .navItems .nav {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  text-transform: uppercase;
   padding: 0 5px;
   margin: 0 10px;
-  color: #000000;
   position: relative;
 }
 
@@ -126,13 +120,7 @@
 
 .subHeader .subHeadNav {
   width: 120px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  text-transform: uppercase;
   margin: 0 8px;
-  color: #000000;
   position: relative;
   cursor: pointer;
 }
