@@ -1,33 +1,39 @@
 .sidebar {
   height: calc(100vh - 180px);
-  min-width: 20%;
+  width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
 }
 
 .sidebar .currentView {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  color: #ffffff;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  text-align: right;
+  color: rgba(255, 255, 255, 0.77);
   font-weight: 700;
   font-size: 10rem;
-  position: fixed;
-  left: -10rem;
-  top: 25.5rem;
   z-index: 2;
   max-width: 556px;
+  margin: -40px 0 0 -40px;
 }
 
-.sidebar .currentView.descActive {
+.sidebar .currentView.Description {
   font-size: 6.3rem;
+}
+
+.sidebar .currentView.Reviews {
+  font-size: 9rem;
 }
 
 .sidebar .pageNav a {
@@ -44,9 +50,8 @@
 .sidebar .pageNav a.active::before, .sidebar .pageNav a.active::after, .sidebar .pageNav a:hover::before, .sidebar .pageNav a:hover::after {
   content: "";
   position: absolute;
-  height: 0px;
-  background-color: #ffffff;
-  width: 0px;
+  height: 9px;
+  width: 0vw;
   right: 0;
   bottom: 0;
   transition: all 0.5s ease;
@@ -56,8 +61,11 @@
 
 .sidebar .pageNav a.active::after, .sidebar .pageNav a:hover::after {
   background-color: #feeaa1;
-  height: 9px;
   width: 100vw;
+}
+
+.sidebar .pageNav .socialLinks {
+  width: 108px;
 }
 
 .sidebar .pageNav .socialLinks a {
@@ -69,8 +77,18 @@
   margin-right: 0px;
 }
 
+.sidebar .pageNav .socialLinks a:hover::before, .sidebar .pageNav .socialLinks a:hover::after {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .sidebar .currentView {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar {
     display: none;
   }
 }
