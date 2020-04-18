@@ -2,10 +2,10 @@
 
 .section {
     background       : $pageBg;
-    margin           : 4rem 0 0 4rem;
+    margin           : 4rem 0 5rem 4rem;
     position         : relative;
     height           : 100%;
-    background-size  : 100% 100%;
+    background-size  : cover;
     background-repeat: no-repeat;
 
     .sectionImg {
@@ -19,6 +19,50 @@
         max-width : 500px;
         background: $pageBg;
         height    : 120px;
+        z-index   : 2;
+    }
+
+    .secTitle {
+        position      : absolute;
+        top           : 0px;
+        background    : $pageBg;
+        z-index       : 2;
+        writing-mode  : vertical-rl;
+        transform     : rotate(180deg);
+        text-align    : right;
+        height        : 100%;
+        text-transform: uppercase !important;
+        font-size     : 10px !important;
+        letter-spacing: 1.7px;
+        padding-left  : 20px;
+
+        span {
+            position: relative;
+
+            &::after {
+                content   : "";
+                width     : 1px;
+                height    : 5rem;
+                background: $black;
+                position  : absolute;
+                bottom    : 0;
+                right     : 6px;
+                top       : -50%;
+            }
+        }
+    }
+
+    .secImgContainer {
+        position          : absolute;
+        bottom            : 0;
+        z-index           : 1;
+        width             : 35%;
+        height            : auto;
+        left              : -15px;
+        z-index           : 2;
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(88, 88, 88, 0.85);
+        -moz-box-shadow   : 0px 0px 20px 0px rgba(88, 88, 88, 0.85);
+        box-shadow        : 0px 0px 20px 0px rgba(88, 88, 88, 0.85);
     }
 
     .desc {
@@ -38,6 +82,53 @@
         font-size     : 26px;
         font-weight   : $bold;
     }
+
+    .vidContainer {
+        position       : absolute;
+        top            : 0;
+        background     : rgba(0, 0, 0, 0.36);
+        height         : 100%;
+        width          : 100%;
+        z-index        : 1;
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+
+        .playButton {
+            position     : relative;
+            width        : 40px;
+            height       : 40px;
+            background   : $primaryCol;
+            border-radius: 50%;
+            cursor       : pointer;
+            text-align   : center;
+
+            &::before {
+                content      : "";
+                width        : 70px;
+                height       : 70px;
+                position     : absolute;
+                background   : $primaryCol;
+                opacity      : 0.3;
+                border-radius: 50%;
+                top          : -15px;
+                right        : -15px;
+            }
+
+            &::after {
+                content      : "";
+                width        : 0;
+                height       : 0;
+                border-left  : 8px solid $black;
+                border-top   : 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                position     : absolute;
+                top          : 15px;
+                right        : 15px;
+            }
+
+        }
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -48,17 +139,56 @@
 
 @media screen and (max-width: 768px) {
     .section {
-        background-image: none;
+        background-image: none !important;
+        height          : initial;
         margin-left     : 0px;
+
+        .title {
+            position: relative;
+            height  : initial;
+        }
 
         .sectionImg {
             display: block;
         }
 
+        .secImgContainer {
+            position  : relative;
+            bottom    : inherit;
+            width     : 100%;
+            left      : inherit;
+            margin-top: 10px;
+        }
+
+        .secTitle {
+            writing-mode: horizontal-tb;
+            transform   : initial;
+            height      : 25px;
+            padding     : 0 80px 0 0;
+            width       : 100%;
+            text-align  : left;
+
+            span {
+                &::after {
+                    width : 5rem;
+                    height: 1px;
+                    right : -90px;
+                    top   : 6px;
+                }
+            }
+        }
+
+        .vidContainer {
+            .playButton {
+                top: 65px;
+            }
+        }
+
         .desc {
-            position : relative;
-            top      : initial;
-            max-width: 100%;
+            position     : relative;
+            top          : initial;
+            max-width    : 100%;
+            padding-right: 0px;
         }
     }
 }

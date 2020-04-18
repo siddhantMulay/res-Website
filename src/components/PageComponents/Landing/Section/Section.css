@@ -1,9 +1,9 @@
 .section {
   background: #f0f0f0;
-  margin: 4rem 0 0 4rem;
+  margin: 4rem 0 5rem 4rem;
   position: relative;
   height: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -18,6 +18,52 @@
   max-width: 500px;
   background: #f0f0f0;
   height: 120px;
+  z-index: 2;
+}
+
+.section .secTitle {
+  position: absolute;
+  top: 0px;
+  background: #f0f0f0;
+  z-index: 2;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  text-align: right;
+  height: 100%;
+  text-transform: uppercase !important;
+  font-size: 10px !important;
+  letter-spacing: 1.7px;
+  padding-left: 20px;
+}
+
+.section .secTitle span {
+  position: relative;
+}
+
+.section .secTitle span::after {
+  content: "";
+  width: 1px;
+  height: 5rem;
+  background: #000000;
+  position: absolute;
+  bottom: 0;
+  right: 6px;
+  top: -50%;
+}
+
+.section .secImgContainer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 35%;
+  height: auto;
+  left: -15px;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(88, 88, 88, 0.85);
+  box-shadow: 0px 0px 20px 0px rgba(88, 88, 88, 0.85);
 }
 
 .section .desc {
@@ -38,6 +84,58 @@
   font-weight: 700;
 }
 
+.section .vidContainer {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.36);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section .vidContainer .playButton {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #fad451;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.section .vidContainer .playButton::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background: #fad451;
+  opacity: 0.3;
+  border-radius: 50%;
+  top: -15px;
+  right: -15px;
+}
+
+.section .vidContainer .playButton::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid #000000;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
 @media screen and (max-width: 992px) {
   .section {
     margin-left: 0px;
@@ -46,15 +144,48 @@
 
 @media screen and (max-width: 768px) {
   .section {
-    background-image: none;
+    background-image: none !important;
+    height: initial;
     margin-left: 0px;
+  }
+  .section .title {
+    position: relative;
+    height: initial;
   }
   .section .sectionImg {
     display: block;
+  }
+  .section .secImgContainer {
+    position: relative;
+    bottom: inherit;
+    width: 100%;
+    left: inherit;
+    margin-top: 10px;
+  }
+  .section .secTitle {
+    -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
+    -webkit-transform: initial;
+            transform: initial;
+    height: 25px;
+    padding: 0 80px 0 0;
+    width: 100%;
+    text-align: left;
+  }
+  .section .secTitle span::after {
+    width: 5rem;
+    height: 1px;
+    right: -90px;
+    top: 6px;
+  }
+  .section .vidContainer .playButton {
+    top: 65px;
   }
   .section .desc {
     position: relative;
     top: initial;
     max-width: 100%;
+    padding-right: 0px;
   }
 }

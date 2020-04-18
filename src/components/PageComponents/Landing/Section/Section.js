@@ -1,30 +1,38 @@
 
 import React, { Component } from 'react';
 import './Section.css';
-import productImg from '../../../../assets/images/Room.jpg';
-import LineIcon from 'react-lineicons';
 
 class Section extends Component {
 
-    radioCheck = () => { }
-
     render() {
+        const { title, desc, hasVideo, img, secTitle, download, secImg } = this.props;
         const style = {
-            backgroundImage: `url(${productImg})`
+            backgroundImage: `url(${img})`
         }
+        const titleInfo = title ? title : secTitle
+
         return (
             <div className="section" style={style}>
-                <img src={productImg} alt="" className="sectionImg"/>
-                <div className="title text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                <div className="desc">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    </p>
+                <div className={`${title ? 'title' : 'secTitle'} text`}>
+                    <span>{titleInfo}</span>
                 </div>
+                <img src={img} alt="" className="sectionImg" />
+                {desc ?
+                    <div className="desc">
+                        {desc}
+                    </div>
+                    : null}
+                {hasVideo ?
+                    <div className="vidContainer">
+                        <div className="playButton"></div>
+                    </div>
+                    : null}
+                    
+                {secImg ?
+                    <div className="secImgContainer">
+                        <img src={secImg} alt="" className="secImg" />
+                    </div>
+                    : null}
 
             </div>
         )
