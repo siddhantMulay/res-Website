@@ -65,6 +65,15 @@ button {
     cursor    : pointer;
     position  : relative;
     outline   : none;
+
+    &.custButton {
+        padding       : 12px 2rem;
+        font-size     : 12px;
+        text-transform: uppercase;
+        font-weight   : bold;
+        color         : #fff;
+        background    : #ffd541;
+    }
 }
 
 //Mobile devices

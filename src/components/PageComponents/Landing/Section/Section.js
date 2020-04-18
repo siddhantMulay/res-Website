@@ -85,9 +85,12 @@ class Section extends Component {
                             <div className="cardActions">
                                 <div className="counter">
                                     <LineIcon name="minus" />
-                                    <input type="text" />
+                                    <span className='count'>1</span>
                                     <LineIcon name="plus" />
                                 </div>
+                                <button className="custButton">
+                                    Add to Cart
+                                </button>
                             </div>
                         </div>
                     </div>
