@@ -103,6 +103,70 @@ button {
     }
 }
 
+.navItems {
+    .nav {
+        padding : 0 5px;
+        margin  : 0 10px;
+        position: relative;
+
+        &.active,
+        &:hover {
+            z-index: 1;
+
+            &::before,
+            &::after {
+                content           : "";
+                position          : absolute;
+                height            : 0px;
+                background-color  : $white;
+                width             : 0px;
+                left              : 0;
+                bottom            : 0;
+                transition        : all 0.5s ease;
+                -webkit-transition: all 0.5s ease;
+                z-index           : -1;
+            }
+
+            &::after {
+                background-color: $activeCol;
+                height          : 9px;
+                width           : 100%;
+            }
+        }
+    }
+
+    .iconAction {
+        margin: 0 4px;
+
+        &:last-child {
+            margin-right: 0px
+        }
+    }
+}
+
+.socialLinks {
+    width  : 108px;
+    display: flex;
+
+    a {
+        display     : initial;
+        margin-right: 28px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+    }
+}
+
 //Mobile devices
 @media screen and (max-width: 600px) {
     .pageBody {

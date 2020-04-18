@@ -11,15 +11,7 @@
 }
 
 .relatedProdSection .allRelatedProducts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.relatedProdSection .allRelatedProducts .miniProdCard {
-  -ms-flex-preferred-size: 248px;
-      flex-basis: 248px;
-  margin: 2px;
+  margin: 0px;
 }
 
 .section {
@@ -178,12 +170,16 @@
 }
 
 @media screen and (max-width: 992px) {
-  .section {
+  .section,
+  .relatedProdSection {
     margin-left: 0px;
   }
 }
 
 @media screen and (max-width: 768px) {
+  .relatedProdSection {
+    margin-left: 0px;
+  }
   .section {
     background-image: none !important;
     height: initial;

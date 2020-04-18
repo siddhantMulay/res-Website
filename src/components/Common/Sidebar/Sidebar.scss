@@ -59,27 +59,6 @@
             }
         }
 
-        .socialLinks {
-            width: 108px;
-
-            a {
-                display     : initial;
-                margin-right: 28px;
-
-                &:last-child {
-                    margin-right: 0px;
-                }
-
-                &:hover {
-
-                    &::before,
-                    &::after {
-                        display: none;
-                    }
-                }
-
-            }
-        }
     }
 }
 

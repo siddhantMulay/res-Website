@@ -12,12 +12,7 @@
     }
 
     .allRelatedProducts {
-        display: flex;
-
-        .miniProdCard {
-            flex-basis: 248px;
-            margin    : 2px;
-        }
+        margin: 0px;
     }
 }
 
@@ -165,12 +160,19 @@
 }
 
 @media screen and (max-width: 992px) {
-    .section {
+
+    .section,
+    .relatedProdSection {
         margin-left: 0px;
     }
 }
 
 @media screen and (max-width: 768px) {
+
+    .relatedProdSection {
+        margin-left: 0px;
+    }
+
     .section {
         background-image: none !important;
         height          : initial;

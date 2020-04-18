@@ -50,37 +50,7 @@
     }
 
     .navItems {
-        .nav {
-            padding        : 0 5px;
-            margin         : 0 10px;
-            position       : relative;
-
-            &.active,
-            &:hover {
-                z-index: 1;
-
-                &::before,
-                &::after {
-                    content           : "";
-                    position          : absolute;
-                    height            : 0px;
-                    background-color  : $white;
-                    width             : 0px;
-                    left              : 0;
-                    bottom            : 0;
-                    transition        : all 0.5s ease;
-                    -webkit-transition: all 0.5s ease;
-                    z-index           : -1;
-                }
-
-                &::after {
-                    background-color: $activeCol;
-                    height          : 9px;
-                    width           : 100%;
-                }
-            }
-        }
-
+        
         .iconAction {
             margin: 0 4px;
 
@@ -114,10 +84,11 @@
     display        : none;
 
     .subHeadNav {
-        width          : 120px;
-        margin         : 0 8px;
-        position       : relative;
-        cursor         : pointer;
+        width    : 120px;
+        margin   : 0 8px;
+        position : relative;
+        font-size: 10px !important;
+        cursor   : pointer;
 
         &:first-child {
             margin-left: 0px;

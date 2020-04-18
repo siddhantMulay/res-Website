@@ -124,7 +124,7 @@ class Landing extends Component {
         }]
 
         return (
-            <div className="page">
+            <div>
                 <AllBreadcrumbs data={breadcrumbData} />
                 <Sidebar />
                 <div className="landingContent">

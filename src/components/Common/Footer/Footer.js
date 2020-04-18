@@ -1,40 +1,41 @@
 
 import React, { Component } from 'react';
 import './Footer.css'
-import Button from '../../Common/Button/Button';
-import { changeTheme } from '../../../redux/actions/globalActions';
-import { Icon } from '@iconify/react';
-import flashlightOn from '@iconify/icons-jam/flashlight-on';
-import flashlightOff from '@iconify/icons-jam/flashlight-off';
+import Logo from '../../../assets/images/LogoY.png';
+import LineIcon from 'react-lineicons';
 
 class Footer extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            darkTheme: 'dark'
-        }
-    }
-
-    changeTheme = () => {
-        this.setState({
-            darkTheme: !this.state.darkTheme
-        }, () => {
-            let theme = this.state.darkTheme ? 'dark' : 'light';
-            changeTheme(theme);
-        })
-    }
-
     render() {
-        const { darkTheme } = this.state;
-        const { action, showBtn } = this.props;
         return (
             <div className="footer">
-                {showBtn ? <Button buttonText="Add Task" action={action} /> : null}
-                <Icon
-                    className="themeChanger"
-                    onClick={() => this.changeTheme()}
-                    icon={darkTheme ? flashlightOff : flashlightOn} />
+                <div className="newsletter">
+                    <input type="text" placeholder="Grab our Newsletter" />
+                </div>
+
+                <div className="footerNav">
+                    <div className="navItems">
+                        <a className="nav text active" href="#">Bedroom</a>
+                        <a className="nav text" href="#">Living Room</a>
+                        <a className="nav text" href="#">Office</a>
+                        <a className="nav text" href="#">Kitchen</a>
+                        <a className="nav text" href="#">Bathroom</a>
+                    </div>
+                    <div className="logo">
+                        <img src={Logo} alt="" />
+                    </div>
+                    <div className="socialLinks">
+                        <a>
+                            <LineIcon name="facebook-filled" />
+                        </a>
+                        <a>
+                            <LineIcon name="twitter-filled" />
+                        </a>
+                        <a>
+                            <LineIcon name="pinterest" />
+                        </a>
+                    </div>
+                </div>
             </div>
         )
     }

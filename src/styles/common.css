@@ -105,6 +105,63 @@ button.custButton {
   max-width: 175px;
 }
 
+.navItems .nav {
+  padding: 0 5px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.navItems .nav.active, .navItems .nav:hover {
+  z-index: 1;
+}
+
+.navItems .nav.active::before, .navItems .nav.active::after, .navItems .nav:hover::before, .navItems .nav:hover::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  background-color: #ffffff;
+  width: 0px;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.navItems .nav.active::after, .navItems .nav:hover::after {
+  background-color: #feeaa1;
+  height: 9px;
+  width: 100%;
+}
+
+.navItems .iconAction {
+  margin: 0 4px;
+}
+
+.navItems .iconAction:last-child {
+  margin-right: 0px;
+}
+
+.socialLinks {
+  width: 108px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.socialLinks a {
+  display: initial;
+  margin-right: 28px;
+}
+
+.socialLinks a:last-child {
+  margin-right: 0px;
+}
+
+.socialLinks a:hover::before, .socialLinks a:hover::after {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .pageBody {
     padding-left: 0px;

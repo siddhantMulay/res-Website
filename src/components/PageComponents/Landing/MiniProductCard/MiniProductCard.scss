@@ -1,21 +1,27 @@
 @import '../../../../styles/variables.scss';
 
 .miniProdCard {
-    background: $white;
-    padding   : 15px;
-    text-align: center;
+    padding: 0;
 
-    img {
-        height: 180px;
-    }
+    .inner {
+        background: $white;
+        padding   : 15px;
+        text-align: center;
+        margin    : 2px;
+        height    : 330px;
 
-    .name {
-        font-weight: $semiBold;
-        padding-top: 2rem;
-    }
+        img {
+            height: 180px;
+        }
 
-    .price {
-        justify-content: center;
-        padding        : 12px 0;
+        .name {
+            font-weight: $semiBold;
+            padding-top: 2rem;
+        }
+
+        .price {
+            justify-content: center;
+            padding        : 12px 0;
+        }
     }
 }

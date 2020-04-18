@@ -9,15 +9,19 @@ import './styles/bootstrapGrid.css';
 //Index file import
 import Header from './components/Common/Header/Header';
 import Landing from './pages/Landing/Landing';
+import Footer from './components/Common/Footer/Footer';
 
 function App() {
 
   return (
     <div className="pageBody">
       <Header />
-      <Router>
-        <Route path='/' component={Landing} />
-      </Router>
+      <div className="page">
+        <Router>
+          <Route path='/' component={Landing} />
+        </Router>
+        <Footer />
+      </div>
     </div>
   );
 }

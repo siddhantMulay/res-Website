@@ -63,23 +63,6 @@
   width: 100vw;
 }
 
-.sidebar .pageNav .socialLinks {
-  width: 108px;
-}
-
-.sidebar .pageNav .socialLinks a {
-  display: initial;
-  margin-right: 28px;
-}
-
-.sidebar .pageNav .socialLinks a:last-child {
-  margin-right: 0px;
-}
-
-.sidebar .pageNav .socialLinks a:hover::before, .sidebar .pageNav .socialLinks a:hover::after {
-  display: none;
-}
-
 @media screen and (max-width: 992px) {
   .sidebar {
     display: none;

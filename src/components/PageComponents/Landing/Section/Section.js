@@ -12,6 +12,7 @@ class Section extends Component {
         relatedProdData.map((item, index) => {
             retArr.push(<MiniProductCard
                 key={`rp${index}`}
+                className='col-6 col-md-6 col-lg-4 col-xl-3'
                 name={item.name}
                 img={item.img}
                 oldPrice={item.oldPrice}
@@ -39,7 +40,7 @@ class Section extends Component {
                     <div className="title">
                         Related Products
                     </div>
-                    <div className="allRelatedProducts">
+                    <div className="allRelatedProducts row">
                         {this.renderRelatedProducts()}
                     </div>
                 </div>
