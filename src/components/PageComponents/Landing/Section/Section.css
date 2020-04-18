@@ -56,7 +56,7 @@
 
 .section .secImgContainer {
   position: absolute;
-  bottom: 0;
+  bottom: 38px;
   z-index: 1;
   width: 35%;
   height: auto;
@@ -136,6 +136,30 @@
   right: 15px;
 }
 
+.section .downloadContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+  background: #fad451;
+  padding: 0 50px;
+}
+
+.section .downloadContainer .text {
+  font-size: 14px !important;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
 @media screen and (max-width: 992px) {
   .section {
     margin-left: 0px;
@@ -147,6 +171,26 @@
     background-image: none !important;
     height: initial;
     margin-left: 0px;
+  }
+  .section .downloadContainer {
+    bottom: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 52px;
+    background: #fad451;
+    z-index: 2;
+  }
+  .section .downloadContainer .text {
+    font-size: 14px !important;
+    text-transform: uppercase;
+    padding-left: 15px;
   }
   .section .title {
     position: relative;
@@ -161,6 +205,8 @@
     width: 100%;
     left: inherit;
     margin-top: 10px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .section .secTitle {
     -webkit-writing-mode: horizontal-tb;

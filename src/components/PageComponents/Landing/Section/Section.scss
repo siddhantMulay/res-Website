@@ -54,7 +54,7 @@
 
     .secImgContainer {
         position          : absolute;
-        bottom            : 0;
+        bottom            : 38px;
         z-index           : 1;
         width             : 35%;
         height            : auto;
@@ -129,6 +129,25 @@
 
         }
     }
+
+    .downloadContainer {
+        position       : absolute;
+        bottom         : 0;
+        right          : 0;
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        height         : 100px;
+        background     : $primaryCol;
+        padding        : 0 50px;
+
+        .text {
+            font-size     : 14px !important;
+            text-transform: uppercase;
+            padding-left  : 15px;
+        }
+    }
+
 }
 
 @media screen and (max-width: 992px) {
@@ -142,6 +161,22 @@
         background-image: none !important;
         height          : initial;
         margin-left     : 0px;
+
+        .downloadContainer {
+            bottom         : 4px;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            height         : 52px;
+            background     : $primaryCol;
+            z-index        : 2;
+
+            .text {
+                font-size     : 14px !important;
+                text-transform: uppercase;
+                padding-left  : 15px;
+            }
+        }
 
         .title {
             position: relative;
@@ -158,6 +193,7 @@
             width     : 100%;
             left      : inherit;
             margin-top: 10px;
+            box-shadow: none;
         }
 
         .secTitle {
