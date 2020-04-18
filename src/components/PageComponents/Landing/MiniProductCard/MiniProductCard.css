@@ -1,0 +1,21 @@
+.miniProdCard {
+  background: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.miniProdCard img {
+  height: 180px;
+}
+
+.miniProdCard .name {
+  font-weight: 600;
+  padding-top: 2rem;
+}
+
+.miniProdCard .price {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px 0;
+}

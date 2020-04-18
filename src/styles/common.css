@@ -64,6 +64,25 @@ a {
   color: #000000;
 }
 
+.price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 18px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.price .oldPrice {
+  font-weight: initial;
+  color: #a2a2a2;
+  margin-right: 10px;
+  text-decoration: line-through;
+}
+
 button {
   border: none;
   background: transparent;

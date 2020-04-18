@@ -2,50 +2,80 @@
 import React, { Component } from 'react';
 import './Section.css';
 import LineIcon from 'react-lineicons';
+import MiniProductCard from '../MiniProductCard/MiniProductCard';
 
 class Section extends Component {
 
+    renderRelatedProducts = () => {
+        const { relatedProdData } = this.props;
+        let retArr = [];
+        relatedProdData.map((item, index) => {
+            retArr.push(<MiniProductCard
+                key={`rp${index}`}
+                name={item.name}
+                img={item.img}
+                oldPrice={item.oldPrice}
+                newPrice={item.newPrice}
+            />)
+        });
+        return retArr;
+    }
+
     render() {
-        const { title, desc, hasVideo, img, secTitle, download, secImg, suggested } = this.props;
+        const { title, desc,
+            hasVideo, img,
+            secTitle, download,
+            secImg, suggested, relatedProds } = this.props;
+
         const style = {
-            backgroundImage: `url(${img})`
+            // backgroundImage: `url(${img})`
         }
         const titleInfo = title ? title : secTitle
 
         return (
-            <div className={`section ${suggested ? 'suggested' : null}`} style={style}>
-                <img src={img} alt="" className={`sectionImg ${hasVideo ? 'vid' : null}`} />
 
-                <div className={`${title ? 'title' : 'secTitle'} text`}>
-                    <span>{titleInfo}</span>
+            relatedProds ?
+                <div className="relatedProdSection">
+                    <div className="title">
+                        Related Products
+                    </div>
+                    <div className="allRelatedProducts">
+                        {this.renderRelatedProducts()}
+                    </div>
                 </div>
+                :
+                <div className={`section ${suggested ? 'suggested' : null}`} style={style}>
+                    <img src={img} alt="" className={`sectionImg ${hasVideo ? 'vid' : null}`} />
 
-                {desc ?
-                    <div className="desc">
-                        {desc}
+                    <div className={`${title ? 'title' : 'secTitle'} text`}>
+                        <span>{titleInfo}</span>
                     </div>
-                    : null}
 
-                {hasVideo ?
-                    <div className="vidContainer">
-                        <div className="playButton"></div>
-                    </div>
-                    : null}
+                    {desc ?
+                        <div className="desc">
+                            {desc}
+                        </div>
+                        : null}
 
-                {secImg ?
-                    <div className="secImgContainer">
-                        <img src={secImg} alt="" className="secImg" />
-                    </div>
-                    : null}
+                    {hasVideo ?
+                        <div className="vidContainer">
+                            <div className="playButton"></div>
+                        </div>
+                        : null}
 
-                {download ?
-                    <button className="downloadContainer">
-                        <LineIcon name="download" />
-                        <span className="text">Download PDF</span>
-                    </button>
-                    : null}
+                    {secImg ?
+                        <div className="secImgContainer">
+                            <img src={secImg} alt="" className="secImg" />
+                        </div>
+                        : null}
 
-            </div>
+                    {download ?
+                        <button className="downloadContainer">
+                            <LineIcon name="download" />
+                            <span className="text">Download PDF</span>
+                        </button>
+                        : null}
+                </div>
         )
     }
 }

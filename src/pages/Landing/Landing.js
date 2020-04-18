@@ -4,11 +4,18 @@ import AllBreadcrumbs from '../../components/Common/Breadcrumbs/AllBreadcrumbs';
 import Sidebar from '../../components/Common/Sidebar/Sidebar';
 import './Landing.css';
 import ProductCard from '../../components/PageComponents/Landing/ProductCard/ProductCard';
+
 import productImg from '../../assets/images/Product.png';
 import roomImg from '../../assets/images/Room.jpg';
 import roomImg2 from '../../assets/images/Room2.jpg';
 import roomImg3 from '../../assets/images/Room3.jpg';
 import roomImg4 from '../../assets/images/Room4.jpg';
+
+import prodImg from '../../assets/images/relatedProd/Bamboo.png';
+import prodImg2 from '../../assets/images/relatedProd/Pearly.png';
+import prodImg3 from '../../assets/images/relatedProd/Oled.png';
+import prodImg4 from '../../assets/images/relatedProd/Bamboo2.png';
+
 import Section from '../../components/PageComponents/Landing/Section/Section';
 
 const descData = [{
@@ -94,6 +101,28 @@ class Landing extends Component {
             ]
         }
 
+        const relatedProdData = [{
+            name: 'Bamboo Filter Gobo',
+            img: prodImg,
+            oldPrice: "$169",
+            newPrice: "$149"
+        }, {
+            name: 'Pearly White Gold',
+            img: prodImg2,
+            oldPrice: "$169",
+            newPrice: "$149"
+        }, {
+            name: 'Oled Ringlight',
+            img: prodImg3,
+            oldPrice: "$169",
+            newPrice: "$149"
+        }, {
+            name: 'Bamboo Filter Gobo',
+            img: prodImg4,
+            oldPrice: "$169",
+            newPrice: "$149"
+        }]
+
         return (
             <div className="page">
                 <AllBreadcrumbs data={breadcrumbData} />
@@ -104,12 +133,11 @@ class Landing extends Component {
                             data={productData}
                         />
                         {this.renderDescriptionSections()}
-                        <div>
-                            lOLOL
-                        </div>
+                        <Section
+                            relatedProds={true}
+                            relatedProdData={relatedProdData} />
                     </div>
                 </div>
-
             </div>
         )
     }

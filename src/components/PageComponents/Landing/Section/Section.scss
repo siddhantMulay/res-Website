@@ -1,16 +1,30 @@
 @import '../../../../styles/variables.scss';
 
-.section {
-    background       : $pageBg;
-    margin           : 4rem 0 5rem 4rem;
-    position         : relative;
-    height           : 100%;
-    background-size  : cover;
-    background-repeat: no-repeat;
+.relatedProdSection {
+    margin-bottom: 8rem;
+    margin-left  : 4rem;
 
-    .sectionImg {
-        display: none;
+    .title {
+        text-transform: none;
+        font-size     : 26px;
+        font-weight   : $bold;
+        margin-bottom : 30px;
     }
+
+    .allRelatedProducts {
+        display: flex;
+
+        .miniProdCard {
+            flex-basis: 248px;
+            margin    : 2px;
+        }
+    }
+}
+
+.section {
+    background: $pageBg;
+    margin    : 4rem 0 8rem 4rem;
+    position  : relative;
 
     .title {
         position  : absolute;
@@ -42,12 +56,12 @@
             &::after {
                 content   : "";
                 width     : 1px;
-                height    : 5rem;
+                height    : 3rem;
                 background: $black;
                 position  : absolute;
                 bottom    : 0;
                 right     : 6px;
-                top       : -50%;
+                top       : -32%;
             }
         }
     }
@@ -56,7 +70,7 @@
         position          : absolute;
         bottom            : 38px;
         z-index           : 1;
-        width             : 35%;
+        width             : 30%;
         height            : auto;
         left              : -15px;
         z-index           : 2;
@@ -87,7 +101,7 @@
         position       : absolute;
         top            : 0;
         background     : rgba(0, 0, 0, 0.36);
-        height         : 100%;
+        height         : 99%;
         width          : 100%;
         z-index        : 1;
         display        : flex;
@@ -132,7 +146,7 @@
 
     .downloadContainer {
         position       : absolute;
-        bottom         : 0;
+        bottom         : 4px;
         right          : 0;
         display        : flex;
         align-items    : center;
@@ -194,6 +208,7 @@
             height    : initial;
             background: $white;
             padding   : 16px;
+            max-width : 100%;
         }
 
         .sectionImg {
@@ -207,7 +222,7 @@
 
         .secImgContainer {
             left  : 18px;
-            width : 80%;
+            width : 60%;
             bottom: 11px;
         }
 

@@ -1,6 +1,5 @@
 .sidebar {
   height: calc(100vh - 180px);
-  width: 16%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
