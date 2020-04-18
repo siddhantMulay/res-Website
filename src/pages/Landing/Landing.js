@@ -23,6 +23,7 @@ const descData = [{
     download: false,
     secImg: '',
     secDesc: '',
+    suggested: false
 }, {
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     desc: '',
@@ -31,6 +32,7 @@ const descData = [{
     download: false,
     secImg: '',
     secDesc: '',
+    suggested: false
 }, {
     title: '',
     desc: '',
@@ -39,6 +41,7 @@ const descData = [{
     download: true,
     secImg: roomImg4,
     secTitle: 'Suggested Accomodation',
+    suggested: true
 }]
 
 class Landing extends Component {
@@ -54,6 +57,7 @@ class Landing extends Component {
                 hasVideo={item.hasVideo}
                 download={item.download}
                 secImg={item.secImg}
+                suggested={item.suggested}
                 secTitle={item.secTitle}
             />)
         });

@@ -6,20 +6,19 @@ import LineIcon from 'react-lineicons';
 class Section extends Component {
 
     render() {
-        const { title, desc, hasVideo, img, secTitle, download, secImg } = this.props;
+        const { title, desc, hasVideo, img, secTitle, download, secImg, suggested } = this.props;
         const style = {
             backgroundImage: `url(${img})`
         }
         const titleInfo = title ? title : secTitle
 
         return (
-            <div className="section" style={style}>
+            <div className={`section ${suggested ? 'suggested' : null}`} style={style}>
+                <img src={img} alt="" className={`sectionImg ${hasVideo ? 'vid' : null}`} />
 
                 <div className={`${title ? 'title' : 'secTitle'} text`}>
                     <span>{titleInfo}</span>
                 </div>
-
-                <img src={img} alt="" className="sectionImg" />
 
                 {desc ?
                     <div className="desc">

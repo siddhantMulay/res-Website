@@ -161,15 +161,26 @@
         background-image: none !important;
         height          : initial;
         margin-left     : 0px;
+        background      : $white;
+
+        &.suggested {
+            .sectionImg {
+                padding   : 0;
+                height    : 65vh;
+                object-fit: cover;
+            }
+
+            .secTitle {
+                padding-right: 15px;
+
+            }
+        }
 
         .downloadContainer {
-            bottom         : 4px;
-            display        : flex;
-            align-items    : center;
-            justify-content: center;
-            height         : 52px;
-            background     : $primaryCol;
-            z-index        : 2;
+            bottom : inherit;
+            top    : 0;
+            padding: 0 45px;
+            right  : -1px;
 
             .text {
                 font-size     : 14px !important;
@@ -179,52 +190,40 @@
         }
 
         .title {
-            position: relative;
-            height  : initial;
+            position  : relative;
+            height    : initial;
+            background: $white;
+            padding   : 16px;
         }
 
         .sectionImg {
             display: block;
+            padding: 16px;
+
+            &.vid {
+                padding: 0px;
+            }
         }
 
         .secImgContainer {
-            position  : relative;
-            bottom    : inherit;
-            width     : 100%;
-            left      : inherit;
-            margin-top: 10px;
-            box-shadow: none;
-        }
-
-        .secTitle {
-            writing-mode: horizontal-tb;
-            transform   : initial;
-            height      : 25px;
-            padding     : 0 80px 0 0;
-            width       : 100%;
-            text-align  : left;
-
-            span {
-                &::after {
-                    width : 5rem;
-                    height: 1px;
-                    right : -90px;
-                    top   : 6px;
-                }
-            }
+            left  : 18px;
+            width : 80%;
+            bottom: 11px;
         }
 
         .vidContainer {
             .playButton {
-                top: 65px;
+                top: -50px;
             }
         }
 
         .desc {
             position     : relative;
             top          : initial;
+            padding      : 16px;
             max-width    : 100%;
             padding-right: 0px;
+            background   : $white;
         }
     }
 }
