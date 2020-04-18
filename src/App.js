@@ -18,6 +18,9 @@ function App() {
       <Router>
         <Route path='/' component={Landing} />
       </Router>
+      <div>
+        lOLOL
+      </div>
     </div>
   );
 }

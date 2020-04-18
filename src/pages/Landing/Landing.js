@@ -46,7 +46,7 @@ const descData = [{
 
 class Landing extends Component {
 
-    renderSections = () => {
+    renderDescriptionSections = () => {
         let retArr = [];
         descData.map((item, index) => {
             retArr.push(<Section
@@ -97,15 +97,19 @@ class Landing extends Component {
         return (
             <div className="page">
                 <AllBreadcrumbs data={breadcrumbData} />
+                <Sidebar />
                 <div className="landingContent">
-                    <Sidebar />
                     <div className="allSections">
                         <ProductCard
                             data={productData}
                         />
-                        {this.renderSections()}
+                        {this.renderDescriptionSections()}
+                        <div>
+                            lOLOL
+                        </div>
                     </div>
                 </div>
+
             </div>
         )
     }
