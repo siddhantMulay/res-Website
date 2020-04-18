@@ -14,6 +14,13 @@ body {
     }
 }
 
+body {
+    overflow-y: auto;
+    height    : 100vh;
+    position  : relative;
+    overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
     width : 4px;
     height: 4px;
@@ -72,7 +79,9 @@ button {
         text-transform: uppercase;
         font-weight   : bold;
         color         : #fff;
-        background    : #ffd541;
+        background    : $primaryCol;
+        font-family   : $title !important;
+        letter-spacing: 0.5px;
     }
 }
 

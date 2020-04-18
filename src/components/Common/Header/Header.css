@@ -91,7 +91,7 @@
   position: absolute;
   font-size: 10px;
   font-weight: bold;
-  background: #ffd541;
+  background: #fad451;
   width: 18px;
   height: 18px;
   display: -webkit-box;
@@ -134,7 +134,7 @@
 }
 
 .subHeader .subHeadNav.active, .subHeader .subHeadNav:hover {
-  background: #ffd541;
+  background: #fad451;
   color: #ffffff;
 }
 

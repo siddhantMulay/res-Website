@@ -21,6 +21,7 @@
   text-transform: none;
   font-size: 26px;
   max-width: 260px;
+  font-weight: 700 !important;
 }
 
 .productCard .productDetails .price {
@@ -220,52 +221,52 @@
 }
 
 @media screen and (max-width: 600px) {
-  .section {
+  .productCard {
     margin-left: 0rem;
   }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
+  .productCard .row .imgContainer,
+  .productCard .row .dataContainer {
     -webkit-transform: translate(0, -90px);
             transform: translate(0, -90px);
   }
-  .section .row .dataContainer {
+  .productCard .row .dataContainer {
     margin-top: 15px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .section {
+  .productCard {
     margin-left: 0rem;
   }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
+  .productCard .row .imgContainer,
+  .productCard .row .dataContainer {
     -webkit-transform: translate(0, -90px);
             transform: translate(0, -90px);
   }
-  .section .row .dataContainer {
+  .productCard .row .dataContainer {
     margin-top: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 768px) {
-  .section {
+  .productCard {
     margin-left: 0rem;
   }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
+  .productCard .row .imgContainer,
+  .productCard .row .dataContainer {
     -webkit-transform: translate(-90px);
             transform: translate(-90px);
   }
-  .section .row .dataContainer {
+  .productCard .row .dataContainer {
     margin-top: 15px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .section {
+  .productCard {
     margin-left: 0rem;
   }
-  .section .row .dataContainer {
+  .productCard .row .dataContainer {
     margin-top: 15px;
   }
 }

@@ -48,6 +48,7 @@ class Landing extends Component {
                         <ProductCard
                             data={productData}
                         />
+                        <Section />
                     </div>
                 </div>
             </div>

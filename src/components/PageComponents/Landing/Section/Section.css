@@ -1,269 +1,60 @@
 .section {
-  background: #ffffff;
-  margin-left: 4rem;
+  background: #f0f0f0;
+  margin: 4rem 0 0 4rem;
+  position: relative;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.section .row {
-  padding: 3rem;
+.section .sectionImg {
+  display: none;
 }
 
-.section .row .imgContainer,
-.section .row .dataContainer {
-  -webkit-transform: translate(-90px);
-          transform: translate(-90px);
+.section .title {
+  position: absolute;
+  top: 0px;
+  padding: 20px 30px 20px 0px;
+  max-width: 500px;
+  background: #f0f0f0;
+  height: 120px;
 }
 
-.section .productDetails *:not(i) {
-  font-family: "Montserrat", sans-serif !important;
+.section .desc {
+  background: #f0f0f0;
+  position: absolute;
+  top: 105px;
+  max-width: 230px;
+  height: 100%;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 15px 40px 0 0;
 }
 
-.section .productDetails .name {
+.section .text {
   text-transform: none;
   font-size: 26px;
-}
-
-.section .productDetails .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 18px 0;
-  font-size: 18px;
   font-weight: 700;
 }
 
-.section .productDetails .price .oldPrice {
-  font-weight: initial;
-  color: #a2a2a2;
-  margin-right: 10px;
-  text-decoration: line-through;
-}
-
-.section .productDetails .title {
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.2px;
-  text-transform: uppercase;
-  color: #5b5b5b;
-}
-
-.section .productDetails .notes {
-  padding: 8px 0;
-  border: 1px solid #ddd;
-  border-left: 0px;
-  border-right: 0px;
-}
-
-.section .productDetails .notes ul {
-  padding-left: 18px;
-  font-size: 12px;
-  line-height: 2.2;
-}
-
-.section .productDetails .notes ul .desc {
-  font-family: "Open Sans", sans-serif !important;
-}
-
-.section .productDetails .attributes {
-  padding: 18px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.section .productDetails .attributes .feature {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: 16px;
-}
-
-.section .productDetails .attributes .feature:last-child {
-  margin-right: 0px;
-}
-
-.section .productDetails .attributes .feature .icon {
-  width: 20px;
-  height: 20px;
-  padding: 18px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 50%;
-  background: #e5e5e5;
-  margin-right: 10px;
-}
-
-.section .productDetails .attributes .feature .title {
-  max-width: 120px;
-}
-
-.section .productDetails .color {
-  padding-bottom: 15px;
-}
-
-.section .productDetails .color .colorSelection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px 0;
-}
-
-.section .productDetails .color .colorSelection .colorSelect {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  margin: 0px 10px 0px 0px;
-  cursor: pointer;
-  position: relative;
-}
-
-.section .productDetails .color .colorSelection .colorSelect.beige {
-  background: #dad5ab;
-}
-
-.section .productDetails .color .colorSelection .colorSelect.black {
-  background: #000000;
-}
-
-.section .productDetails .color .colorSelection .colorSelect.white {
-  background: #ffffff;
-  border: 1px solid #ddd;
-}
-
-.section .productDetails .color .colorSelection .colorSelect input[type=radio] {
-  margin: 0px 10px 0px 0px;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.section .productDetails .color .colorSelection .colorSelect input[type=radio]:last-child {
-  margin: 0px;
-}
-
-.section .productDetails .color .colorSelection .colorSelect input[type=radio]:checked ~ .checkMark.white::after {
-  border: solid #000000;
-  top: 6px;
-  right: 9px;
-}
-
-.section .productDetails .color .colorSelection .colorSelect input[type=radio]:checked ~ .checkMark::after {
-  content: '';
-  display: block;
-  width: 5px;
-  height: 9px;
-  border: solid #ffffff;
-  border-width: 0 2px 2px 0 !important;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  position: absolute;
-  top: 7px;
-  right: 10px;
-  z-index: 3;
-}
-
-.section .productDetails .cardActions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.section .productDetails .counter {
-  background: #efefef;
-  width: 105px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.section .productDetails .counter i {
-  font-weight: 700;
-  color: #5b5b5b;
-  padding: 14px 12px;
-  cursor: pointer;
-  font-size: 10px;
-}
-
-.section .productDetails .counter .count {
-  font-family: "Open Sans", sans-serif !important;
-  cursor: default;
-  font-size: 12px;
-  font-weight: 600;
-  color: #000000;
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .section {
-    margin-left: 0rem;
-  }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
-    -webkit-transform: translate(0, -90px);
-            transform: translate(0, -90px);
-  }
-  .section .row .dataContainer {
-    margin-top: 15px;
+    margin-left: 0px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .section {
-    margin-left: 0rem;
+    background-image: none;
+    margin-left: 0px;
   }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
-    -webkit-transform: translate(0, -90px);
-            transform: translate(0, -90px);
+  .section .sectionImg {
+    display: block;
   }
-  .section .row .dataContainer {
-    margin-top: 15px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 768px) {
-  .section {
-    margin-left: 0rem;
-  }
-  .section .row .imgContainer,
-  .section .row .dataContainer {
-    -webkit-transform: translate(-90px);
-            transform: translate(-90px);
-  }
-  .section .row .dataContainer {
-    margin-top: 15px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .section {
-    margin-left: 0rem;
-  }
-  .section .row .dataContainer {
-    margin-top: 15px;
+  .section .desc {
+    position: relative;
+    top: initial;
+    max-width: 100%;
   }
 }

@@ -12,6 +12,13 @@ body * {
   -webkit-transition: all 0.2s ease;
 }
 
+body {
+  overflow-y: auto;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -26,7 +33,7 @@ body * {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffd541;
+  background: #fad451;
 }
 
 img {
@@ -71,7 +78,9 @@ button.custButton {
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
-  background: #ffd541;
+  background: #fad451;
+  font-family: "Open Sans", sans-serif !important;
+  letter-spacing: 0.5px;
 }
 
 @media screen and (max-width: 600px) {

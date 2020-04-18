@@ -24,6 +24,7 @@
             text-transform: none;
             font-size     : 26px;
             max-width     : 260px;
+            font-weight   : $bold !important;
         }
 
         .price {
@@ -199,7 +200,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .section {
+    .productCard {
         margin-left: 0rem;
 
         .row {
@@ -218,7 +219,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .section {
+    .productCard {
         margin-left: 0rem;
 
         .row {
@@ -237,7 +238,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 768px) {
-    .section {
+    .productCard {
         margin-left: 0rem;
 
         .row {
@@ -256,7 +257,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .section {
+    .productCard {
         margin-left: 0rem;
 
         .row {
