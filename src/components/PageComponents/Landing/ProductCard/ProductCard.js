@@ -4,6 +4,7 @@ import './ProductCard.css';
 import LineIcon from 'react-lineicons';
 import { Tween, Timeline } from 'react-gsap';
 import config from '../../../../common/utils';
+import AllRatings from '../../../Common/Ratings/AllRatings';
 
 class ProductCard extends Component {
 
@@ -55,13 +56,16 @@ class ProductCard extends Component {
                         </div>
 
                         <div className="col-md-6 col-lg-6 col-xl-6 dataContainer">
-                            <Tween duration={1.2} from={{ opacity: 0, transform: `translateX(-125px)` }} 
-                            to={{ opacity: 1, transform: `translateX(0)` }}>
+                            <Tween duration={1.2} from={{ opacity: 0, transform: `translateX(-125px)` }}
+                                to={{ opacity: 1, transform: `translateX(0)` }}>
                                 <div className="productDetails">
                                     <div className="name text">
                                         {data.name}
                                     </div>
-
+                                    <div className="ratingContainer">
+                                        <AllRatings rating={4} />
+                                        <span>(23)</span>
+                                    </div>
                                     <div className="price">
                                         {data.oldPrice ?
                                             <div className="oldPrice">

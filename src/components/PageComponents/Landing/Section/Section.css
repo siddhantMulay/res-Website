@@ -1,17 +1,24 @@
-.relatedProdSection {
+.relatedProdSection,
+.reviewSection {
   margin-bottom: 8rem;
   margin-left: 4rem;
 }
 
-.relatedProdSection .title {
+.relatedProdSection .title,
+.reviewSection .title {
   text-transform: none;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
-.relatedProdSection .allRelatedProducts {
+.relatedProdSection .allRelatedProducts,
+.reviewSection .allRelatedProducts {
   margin: 0px;
+}
+
+.reviewSection .title {
+  padding-left: 15px;
 }
 
 .section {
@@ -171,7 +178,8 @@
 
 @media screen and (max-width: 992px) {
   .section,
-  .relatedProdSection {
+  .relatedProdSection,
+  .reviewSection {
     margin-left: 0px;
   }
 }

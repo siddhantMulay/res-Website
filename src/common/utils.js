@@ -11,6 +11,9 @@ import prodImg2 from '../assets/images/relatedProd/Pearly.png';
 import prodImg3 from '../assets/images/relatedProd/Oled.png';
 import prodImg4 from '../assets/images/relatedProd/Bamboo2.png';
 
+import john from '../assets/images/john.jpg';
+import jane from '../assets/images/jane.jpg';
+
 const config = {
 
     imgFromAnimation: {
@@ -108,7 +111,28 @@ const config = {
             img: prodImg4,
             oldPrice: "$169",
             newPrice: "$149"
-        }]
+        }],
+        reviewData: [{
+            user: 'John Doe',
+            userImg: john,
+            reviewDate: "August 28, 2106",
+            remark: "Excellent",
+            rating: 4,
+            review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut`
+        }, {
+            user: 'Jane Doe',
+            userImg: jane,
+            reviewDate: "August 28, 2106",
+            remark: "Excellent",
+            rating: 3,
+            review: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore>Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut`
+        },]
     },
 }
 

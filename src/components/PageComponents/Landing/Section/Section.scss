@@ -1,6 +1,7 @@
 @import '../../../../styles/variables.scss';
 
-.relatedProdSection {
+.relatedProdSection,
+.reviewSection {
     margin-bottom: 8rem;
     margin-left  : 4rem;
 
@@ -16,11 +17,10 @@
     }
 }
 
-.section,
-.relatedProdSection {
-    // opacity           : 0;
-    // transition        : opacity 0.2s ease;
-    // -webkit-transition: opacity 0.2s ease;
+.reviewSection {
+    .title {
+        padding-left: 15px;
+    }
 }
 
 .section {
@@ -169,7 +169,8 @@
 @media screen and (max-width: 992px) {
 
     .section,
-    .relatedProdSection {
+    .relatedProdSection,
+    .reviewSection {
         margin-left: 0px;
     }
 }

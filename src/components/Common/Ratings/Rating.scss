@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+.allRatings {
+    display    : flex;
+
+    .star {
+        padding: 0 2px;
+
+        &.inactive {
+            color: #d8d8d8;
+        }
+
+        &.active {
+            color: $primaryCol;
+        }
+
+        &:first-child {
+            padding-left: 0px;
+        }
+
+        &:last-child {
+            padding-right: 0px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@import '../../../../styles/variables.scss';
+
+.review {
+    align-items: flex-start;
+    margin     : 0 0 3rem 0;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .userData {
+        display    : flex;
+        align-items: center;
+
+        .userImg {
+            padding-right: 16px;
+
+            img {
+                width        : 55px;
+                height       : 55px;
+                border-radius: 50%;
+                object-fit   : cover;
+            }
+        }
+
+        .userInfo {
+            .name {
+                font-weight: $bold;
+            }
+
+            .reviewDate {
+                font-weight: 600;
+                font-size  : 13px;
+                margin-top : 4px;
+                color      : $subTextCol;
+            }
+        }
+    }
+
+    .reviewData {
+        padding-right: 36px;
+
+        .remark {
+            font-weight: $bold;
+        }
+
+        .allRatings {
+            padding: 12px 0;
+        }
+
+        .reviewInfo {
+            color      : $listTitleCol;
+            line-height: 1.6;
+            font-size  : 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .review {
+        .reviewData {
+            margin-top: 2rem;
+        }
+    }
+}

@@ -19,6 +19,7 @@ class Landing extends Component {
         super(props);
         this.productRef = React.createRef();
         this.descriptionRef = React.createRef();
+        this.reviewsRef = React.createRef();
         this.relatedProdRef = React.createRef();
         this.state = {
             loaded: false,
@@ -41,7 +42,7 @@ class Landing extends Component {
                 }, {
                     id: 2,
                     title: 'Reviews',
-                    ref: this.productRef,
+                    ref: this.reviewsRef,
                     active: false
                 }, {
                     id: 3,
@@ -148,7 +149,7 @@ class Landing extends Component {
 
     render() {
         const { loaded, sidebarStyle, sidebarData } = this.state;
-        const { productData, relatedProdData } = this.props;
+        const { productData, relatedProdData, reviewData } = this.props;
 
         const breadcrumbData = [{
             text: 'Catalog',
@@ -169,6 +170,7 @@ class Landing extends Component {
                         data={sidebarData}
                     />
                     <AllBreadcrumbs data={breadcrumbData} />
+
                     <Sidebar
                         changeView={(id) => this.updateView(id)}
                         data={sidebarData}
@@ -185,6 +187,11 @@ class Landing extends Component {
                                 {this.renderDescriptionSections()}
                             </div>
 
+                            <div className='secContainer' ref={this.reviewsRef}>
+                                <Section
+                                    reviews={true}
+                                    reviewData={reviewData} />
+                            </div>
 
                             <div className='secContainer' ref={this.relatedProdRef}>
                                 <Section
@@ -205,7 +212,8 @@ const mapStateToProps = (state) => {
     return {
         productData: prodData,
         descData: prodData.descData || {},
-        relatedProdData: prodData.relatedProdData || {}
+        relatedProdData: prodData.relatedProdData || {},
+        reviewData: prodData.reviewData || {}
     }
 }
 
