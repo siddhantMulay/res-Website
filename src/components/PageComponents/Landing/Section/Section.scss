@@ -16,6 +16,13 @@
     }
 }
 
+.section,
+.relatedProdSection {
+    // opacity           : 0;
+    // transition        : opacity 0.2s ease;
+    // -webkit-transition: opacity 0.2s ease;
+}
+
 .section {
     background: $pageBg;
     margin    : 4rem 0 8rem 4rem;

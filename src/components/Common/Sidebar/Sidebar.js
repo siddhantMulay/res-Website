@@ -6,8 +6,9 @@ import LineIcon from 'react-lineicons';
 class Sidebar extends Component {
 
     render() {
+        const { style } = this.props;
         return (
-            <div className="sidebar">
+            <div className="sidebar" style={style}>
                 <div className="currentView">
                     <span>Details</span>
                 </div>

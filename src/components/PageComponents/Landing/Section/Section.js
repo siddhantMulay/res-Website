@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './Section.css';
 import LineIcon from 'react-lineicons';
 import MiniProductCard from '../MiniProductCard/MiniProductCard';
+import { Tween } from 'react-gsap';
+import { config } from '../../../../common/utils';
 
 class Section extends Component {
 
@@ -28,9 +30,6 @@ class Section extends Component {
             secTitle, download,
             secImg, suggested, relatedProds } = this.props;
 
-        const style = {
-            // backgroundImage: `url(${img})`
-        }
         const titleInfo = title ? title : secTitle
 
         return (
@@ -45,12 +44,21 @@ class Section extends Component {
                     </div>
                 </div>
                 :
-                <div className={`section ${suggested ? 'suggested' : null}`} style={style}>
-                    <img src={img} alt="" className={`sectionImg ${hasVideo ? 'vid' : null}`} />
+                <div className={`section ${suggested ? 'suggested' : null}`}>
+                    <Tween
+                        duration={1}
+                        from={config.imgFromAnimation} to={config.imgToAnimation}>
+                        <img src={img} alt="" className={`sectionImg ${hasVideo ? 'vid' : null}`} />
+                    </Tween>
 
                     <div className={`${title ? 'title' : 'secTitle'} text`}>
-                        <span>{titleInfo}</span>
+                        <Tween
+                            duration={1}
+                            from={config.titleFromAnimation} to={config.titleToAnimation}>
+                            <span>{titleInfo}</span>
+                        </Tween>
                     </div>
+
 
                     {desc ?
                         <div className="desc">
@@ -66,7 +74,11 @@ class Section extends Component {
 
                     {secImg ?
                         <div className="secImgContainer">
-                            <img src={secImg} alt="" className="secImg" />
+                            <Tween
+                                duration={1}
+                                from={config.imgFromAnimation} to={config.imgToAnimation}>
+                                <img src={secImg} alt="" className="secImg" />
+                            </Tween>
                         </div>
                         : null}
 

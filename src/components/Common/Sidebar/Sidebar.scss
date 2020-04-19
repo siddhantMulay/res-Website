@@ -1,12 +1,12 @@
 @import '../../../styles/variables.scss';
 
 .sidebar {
-    height         : calc(100vh - 180px);
-    // width          : $sidebarWid;
-    display        : flex;
-    align-items    : center;
-    justify-content: space-between;
-    position       : fixed;
+    height              : calc(100vh - 180px);
+    //width             : $sidebarWid;
+    display             : flex;
+    align-items         : center;
+    justify-content     : space-between;
+    position            : fixed;
 
     .currentView {
         writing-mode: vertical-rl;

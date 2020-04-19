@@ -53,6 +53,17 @@ const descData = [{
 
 class Landing extends Component {
 
+    constructor(props) {
+        super(props);
+        this.relatedProdRef = React.createRef();
+        this.state = {
+            sidebarStyle: {
+                position: 'fixed',
+                bottom: 'inital'
+            }
+        }
+    }
+
     renderDescriptionSections = () => {
         let retArr = [];
         descData.map((item, index) => {
@@ -69,6 +80,32 @@ class Landing extends Component {
             />)
         });
         return retArr;
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+
+    handleScroll = () => {
+        const data = this.relatedProdRef.current.getBoundingClientRect();
+        const elem = this.relatedProdRef.current;
+        console.log(data)
+        if (data.y <= 355 || data.top <= 0  ) {
+            this.setState({
+                sidebarStyle: {
+                    position: 'absolute',
+                    bottom: '0'
+                }
+            })
+        }
+        else {
+            this.setState({
+                sidebarStyle: {
+                    position: 'fixed',
+                    bottom: 'initial'
+                }
+            })
+        }
     }
 
     render() {
@@ -124,20 +161,23 @@ class Landing extends Component {
         }]
 
         return (
-            <div>
+            <div style={{ position: 'relative' }}>
                 <AllBreadcrumbs data={breadcrumbData} />
-                <Sidebar />
+                <Sidebar style={this.state.sidebarStyle} />
                 <div className="landingContent">
                     <div className="allSections">
                         <ProductCard
                             data={productData}
                         />
                         {this.renderDescriptionSections()}
-                        <Section
-                            relatedProds={true}
-                            relatedProdData={relatedProdData} />
+                        <div ref={this.relatedProdRef}>
+                            <Section
+                                relatedProds={true}
+                                relatedProdData={relatedProdData} />
+                        </div>
                     </div>
                 </div>
+
             </div>
         )
     }
