@@ -29,6 +29,9 @@ class Review extends Component {
                     <div className="remark">{data.remark}</div>
                     <AllRatings rating={data.rating} />
                     <div className="reviewInfo">{data.review}</div>
+                    <div className="addComment">
+                        <span>Add Comment</span>
+                    </div>
                 </div>
             </div>
         )

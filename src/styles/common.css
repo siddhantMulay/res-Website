@@ -150,6 +150,7 @@ button.custButton {
 .socialLinks a {
   display: initial;
   margin-right: 28px;
+  color: #000000;
 }
 
 .socialLinks a:last-child {

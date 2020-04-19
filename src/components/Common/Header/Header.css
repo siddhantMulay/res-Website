@@ -90,7 +90,7 @@
   position: fixed;
   width: 100%;
   z-index: 4;
-  top: 60px;
+  top: 75px;
 }
 
 .subHeader .subHeadNav {
@@ -125,6 +125,9 @@
   .header .logo {
     height: 32px;
     width: auto;
+  }
+  .subHeader {
+    top: 60px;
   }
 }
 

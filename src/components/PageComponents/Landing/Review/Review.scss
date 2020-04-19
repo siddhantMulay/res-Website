@@ -53,6 +53,27 @@
             line-height: 1.6;
             font-size  : 14px;
         }
+
+        .addComment {
+            font-weight: $semiBold;
+            font-size  : 12px;
+            cursor     : pointer;
+            margin-top : 1rem;
+
+            span {
+                position: relative;
+
+                &::after {
+                    content   : "";
+                    width     : 100%;
+                    height    : 2px;
+                    background: $primaryCol;
+                    position  : absolute;
+                    bottom    : -4px;
+                    left      : 0;
+                }
+            }
+        }
     }
 }
 

@@ -39,7 +39,7 @@
 
 .section .secTitle {
   position: absolute;
-  top: 0px;
+  top: -1px;
   background: #f0f0f0;
   z-index: 2;
   -webkit-writing-mode: vertical-rl;
