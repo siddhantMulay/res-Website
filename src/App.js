@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import dataStore from './redux/store';
+import { Provider } from 'react-redux';
 
 //Styles
 import './styles/common.css';
@@ -16,12 +18,14 @@ function App() {
   return (
     <div className="pageBody">
       <Header />
-      <div className="page">
-        <Router>
-          <Route path='/' component={Landing} />
-        </Router>
-        <Footer />
-      </div>
+      <Provider store={dataStore}>
+        <div className="page">
+          <Router>
+            <Route path='/' component={Landing} />
+          </Router>
+          <Footer />
+        </div>
+      </Provider>
     </div>
   );
 }

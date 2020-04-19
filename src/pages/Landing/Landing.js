@@ -1,55 +1,14 @@
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import './Landing.css';
+
 import AllBreadcrumbs from '../../components/Common/Breadcrumbs/AllBreadcrumbs';
 import Sidebar from '../../components/Common/Sidebar/Sidebar';
-import './Landing.css';
 import ProductCard from '../../components/PageComponents/Landing/ProductCard/ProductCard';
-
-import productImg from '../../assets/images/Product.png';
-import roomImg from '../../assets/images/Room.jpg';
-import roomImg2 from '../../assets/images/Room2.jpg';
-import roomImg3 from '../../assets/images/Room3.jpg';
-import roomImg4 from '../../assets/images/Room4.jpg';
-
-import prodImg from '../../assets/images/relatedProd/Bamboo.png';
-import prodImg2 from '../../assets/images/relatedProd/Pearly.png';
-import prodImg3 from '../../assets/images/relatedProd/Oled.png';
-import prodImg4 from '../../assets/images/relatedProd/Bamboo2.png';
-
 import Section from '../../components/PageComponents/Landing/Section/Section';
 
-const descData = [{
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore>Lorem ipsum dolor sit amet, 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip`,
-    hasVideo: false,
-    img: roomImg,
-    download: false,
-    secImg: '',
-    secDesc: '',
-    suggested: false
-}, {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    desc: '',
-    hasVideo: true,
-    img: roomImg2,
-    download: false,
-    secImg: '',
-    secDesc: '',
-    suggested: false
-}, {
-    title: '',
-    desc: '',
-    hasVideo: false,
-    img: roomImg3,
-    download: true,
-    secImg: roomImg4,
-    secTitle: 'Suggested Accomodation',
-    suggested: true
-}]
+import { getProductData } from '../../redux/actions/productActions';
 
 class Landing extends Component {
 
@@ -57,6 +16,7 @@ class Landing extends Component {
         super(props);
         this.relatedProdRef = React.createRef();
         this.state = {
+            loaded: false,
             sidebarStyle: {
                 position: 'fixed',
                 bottom: 'inital'
@@ -66,6 +26,7 @@ class Landing extends Component {
 
     renderDescriptionSections = () => {
         let retArr = [];
+        const { descData } = this.props;
         descData.map((item, index) => {
             retArr.push(<Section
                 key={`sec${index}`}
@@ -83,14 +44,17 @@ class Landing extends Component {
     }
 
     componentDidMount() {
+        getProductData().then(() => {
+            this.setState({
+                loaded: true
+            })
+        });
         window.addEventListener('scroll', this.handleScroll, true);
     }
 
     handleScroll = () => {
         const data = this.relatedProdRef.current.getBoundingClientRect();
-        const elem = this.relatedProdRef.current;
-        console.log(data)
-        if (data.y <= 355 || data.top <= 0  ) {
+        if (data.y <= 355 || data.top <= 0) {
             this.setState({
                 sidebarStyle: {
                     position: 'absolute',
@@ -109,6 +73,8 @@ class Landing extends Component {
     }
 
     render() {
+        const { loaded } = this.state;
+        const { productData, relatedProdData } = this.props;
 
         const breadcrumbData = [{
             text: 'Catalog',
@@ -119,68 +85,40 @@ class Landing extends Component {
         }, {
             text: 'Beige Nudie Sofa',
             current: true
-        }]
-
-        const productData = {
-            img: productImg,
-            name: "Nudie Extendable Sofa for 3 persons.",
-            oldPrice: "$169",
-            newPrice: "$149",
-            notes: [{
-                title: 'Assembly',
-                desc: 'Carpenter Assembly'
-            }, {
-                title: 'Warranty',
-                desc: "12 Months' Warranty"
-            }],
-            colors: [
-                'beige', 'black', 'white'
-            ]
-        }
-
-        const relatedProdData = [{
-            name: 'Bamboo Filter Gobo',
-            img: prodImg,
-            oldPrice: "$169",
-            newPrice: "$149"
-        }, {
-            name: 'Pearly White Gold',
-            img: prodImg2,
-            oldPrice: "$169",
-            newPrice: "$149"
-        }, {
-            name: 'Oled Ringlight',
-            img: prodImg3,
-            oldPrice: "$169",
-            newPrice: "$149"
-        }, {
-            name: 'Bamboo Filter Gobo',
-            img: prodImg4,
-            oldPrice: "$169",
-            newPrice: "$149"
-        }]
+        }];
 
         return (
-            <div style={{ position: 'relative' }}>
-                <AllBreadcrumbs data={breadcrumbData} />
-                <Sidebar style={this.state.sidebarStyle} />
-                <div className="landingContent">
-                    <div className="allSections">
-                        <ProductCard
-                            data={productData}
-                        />
-                        {this.renderDescriptionSections()}
-                        <div ref={this.relatedProdRef}>
-                            <Section
-                                relatedProds={true}
-                                relatedProdData={relatedProdData} />
+            loaded ?
+                <div style={{ position: 'relative' }}>
+                    <AllBreadcrumbs data={breadcrumbData} />
+                    <Sidebar style={this.state.sidebarStyle} />
+                    <div className="landingContent">
+                        <div className="allSections">
+                            <ProductCard
+                                data={productData}
+                            />
+                            {this.renderDescriptionSections()}
+                            <div ref={this.relatedProdRef}>
+                                <Section
+                                    relatedProds={true}
+                                    relatedProdData={relatedProdData} />
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
+                : null
         )
     }
 }
 
-export default Landing;
+const mapStateToProps = (state) => {
+    const productStore = state.product;
+    const prodData = productStore.productData;
+    return {
+        productData: prodData,
+        descData: prodData.descData || {},
+        relatedProdData: prodData.relatedProdData || {}
+    }
+}
+
+export default connect(mapStateToProps)(Landing);

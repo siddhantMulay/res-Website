@@ -4,7 +4,7 @@ import './Section.css';
 import LineIcon from 'react-lineicons';
 import MiniProductCard from '../MiniProductCard/MiniProductCard';
 import { Tween } from 'react-gsap';
-import { config } from '../../../../common/utils';
+import config from '../../../../common/utils';
 
 class Section extends Component {
 

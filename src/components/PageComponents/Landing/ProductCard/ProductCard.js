@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './ProductCard.css';
 import LineIcon from 'react-lineicons';
 import { Tween, Timeline } from 'react-gsap';
-import { config } from '../../../../common/utils';
+import config from '../../../../common/utils';
 
 class ProductCard extends Component {
 
