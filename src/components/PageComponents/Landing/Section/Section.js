@@ -11,7 +11,7 @@ class Section extends Component {
     renderRelatedProducts = () => {
         const { relatedProdData } = this.props;
         let retArr = [];
-        relatedProdData.map((item, index) => {
+        relatedProdData.forEach((item, index) => {
             retArr.push(<MiniProductCard
                 key={`rp${index}`}
                 className='col-6 col-md-6 col-lg-4 col-xl-3'

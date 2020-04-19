@@ -1,5 +1,6 @@
 .sidebar {
   height: calc(100vh - 180px);
+  width: 280px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,6 +30,7 @@
 
 .sidebar .currentView.Description {
   font-size: 6.3rem;
+  margin: -40px 0 0 8px !important;
 }
 
 .sidebar .currentView.Reviews {
@@ -40,6 +42,10 @@
   display: block;
   position: relative;
   margin-bottom: 5rem;
+}
+
+.sidebar .pageNav a.active {
+  pointer-events: none;
 }
 
 .sidebar .pageNav a.active, .sidebar .pageNav a:hover {

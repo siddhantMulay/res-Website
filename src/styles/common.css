@@ -177,10 +177,13 @@ button.custButton {
 
 @media screen and (max-width: 992px) {
   .pageBody .page {
-    height: calc(100vh - 105px);
+    height: calc(100vh - 60px);
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+  }
+  .pageBody .page::-webkit-scrollbar {
+    display: none;
   }
   body {
     overflow: hidden;

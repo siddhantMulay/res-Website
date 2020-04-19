@@ -5,34 +5,39 @@ import LineIcon from 'react-lineicons';
 
 class Sidebar extends Component {
 
+    renderSidebarItems = () => {
+        const { data, changeView } = this.props;
+        let retArr = [];
+        data.allData.forEach((item, index) => {
+            retArr.push(<a
+                onClick={() => changeView(item.id)}
+                className={`text ${item.active ? 'active' : null}`}
+                key={`sb${index}`}
+                data-id={item.id}
+                href={`#${item.title}`}>
+                {item.title}
+            </a>)
+        });
+        return retArr;
+    }
+
     render() {
-        const { style } = this.props;
+        const { style, data } = this.props;
         return (
             <div className="sidebar" style={style}>
-                <div className="currentView">
-                    <span>Details</span>
+                <div className={`currentView ${data.activeItem}`}>
+                    <span>{data.activeItem}</span>
                 </div>
                 <div className="pageNav">
-                    <a className="text active" href="#">
-                        Details
-                    </a>
-                    <a className="text" href="#">
-                        Description
-                    </a>
-                    <a className="text" href="#">
-                        Reviews
-                    </a>
-                    <a className="text" href="#">
-                        Custom Tab
-                    </a>
+                    {this.renderSidebarItems()}
                     <div className="socialLinks">
-                        <a href="#">
+                        <a href='/#'>
                             <LineIcon name="facebook-filled" />
                         </a>
-                        <a href="#">
+                        <a href='/#'>
                             <LineIcon name="twitter-filled" />
                         </a>
-                        <a href="#">
+                        <a href='/#'>
                             <LineIcon name="pinterest" />
                         </a>
                     </div>

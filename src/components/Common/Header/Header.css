@@ -87,6 +87,9 @@
       -ms-flex-pack: center;
           justify-content: center;
   display: none;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
 }
 
 .subHeader .subHeadNav {
@@ -103,6 +106,10 @@
 
 .subHeader .subHeadNav:last-child {
   margin-right: 0px;
+}
+
+.subHeader .subHeadNav.active {
+  pointer-events: none;
 }
 
 .subHeader .subHeadNav.active, .subHeader .subHeadNav:hover {

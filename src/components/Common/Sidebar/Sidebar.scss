@@ -1,12 +1,12 @@
 @import '../../../styles/variables.scss';
 
 .sidebar {
-    height              : calc(100vh - 180px);
-    //width             : $sidebarWid;
-    display             : flex;
-    align-items         : center;
-    justify-content     : space-between;
-    position            : fixed;
+    height         : calc(100vh - 180px);
+    width          : $sidebarWid;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    position       : fixed;
 
     .currentView {
         writing-mode: vertical-rl;
@@ -21,6 +21,7 @@
 
         &.Description {
             font-size: 6.3rem;
+            margin   : -40px 0 0 8px !important;
         }
 
         &.Reviews {
@@ -34,6 +35,10 @@
             display      : block;
             position     : relative;
             margin-bottom: 5rem;
+
+            &.active {
+                pointer-events: none;
+            }
 
             &.active,
             &:hover {

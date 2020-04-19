@@ -19,11 +19,11 @@ class Header extends Component {
                     </div>
 
                     <div className="navItems">
-                        <a className="nav text active" href="#">Bedroom</a>
-                        <a className="nav text" href="#">Living Room</a>
-                        <a className="nav text" href="#">Office</a>
-                        <a className="nav text" href="#">Kitchen</a>
-                        <a className="nav text" href="#">Bathroom</a>
+                        <a className="nav text active" href="/#">Bedroom</a>
+                        <a className="nav text" href="/#">Living Room</a>
+                        <a className="nav text" href="/#">Office</a>
+                        <a className="nav text" href="/#">Kitchen</a>
+                        <a className="nav text" href="/#">Bathroom</a>
                         <button className="iconAction">
                             <LineIcon name="search-alt" />
                         </button>
@@ -37,20 +37,6 @@ class Header extends Component {
                         </div>
                         </button>
                     </div>
-                </div>
-                <div className="subHeader">
-                    <button className="subHeadNav text active">
-                        Details
-                    </button>
-                    <button className="subHeadNav text">
-                        Description
-                    </button>
-                    <button className="subHeadNav text">
-                        Reviews
-                    </button>
-                    <button className="subHeadNav text">
-                        Related
-                    </button>
                 </div>
             </div>
         )

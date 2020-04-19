@@ -50,7 +50,7 @@
     }
 
     .navItems {
-        
+
         .iconAction {
             margin: 0 4px;
 
@@ -82,6 +82,9 @@
     border-top     : 1px solid #ddd;
     justify-content: center;
     display        : none;
+    position       : fixed;
+    width          : 100%;
+    z-index        : 4;
 
     .subHeadNav {
         width    : 120px;
@@ -96,6 +99,11 @@
 
         &:last-child {
             margin-right: 0px;
+        }
+
+
+        &.active {
+            pointer-events: none;
         }
 
         &.active,

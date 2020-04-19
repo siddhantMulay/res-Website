@@ -14,7 +14,7 @@ class ProductCard extends Component {
         const notes = data.notes;
         let retArr = [];
         if (notes.length > 0) {
-            notes.map((item, index) => {
+            notes.forEach((item, index) => {
                 retArr.push(<li key={`lol${index}`}>
                     <span className="title">{item.title}:</span>
                     <span className="desc">{item.desc}</span>
@@ -55,7 +55,8 @@ class ProductCard extends Component {
                         </div>
 
                         <div className="col-md-6 col-lg-6 col-xl-6 dataContainer">
-                            <Tween duration={1.2} from={{ opacity: 0, transform: `translateX(-125px)` }} to={{ opacity: 1, transform: `translateX(0)` }}>
+                            <Tween duration={1.2} from={{ opacity: 0, transform: `translateX(-125px)` }} 
+                            to={{ opacity: 1, transform: `translateX(0)` }}>
                                 <div className="productDetails">
                                     <div className="name text">
                                         {data.name}

@@ -15,23 +15,23 @@ class Footer extends Component {
 
                 <div className="footerNav">
                     <div className="navItems">
-                        <a className="nav text active" href="#">Bedroom</a>
-                        <a className="nav text" href="#">Living Room</a>
-                        <a className="nav text" href="#">Office</a>
-                        <a className="nav text" href="#">Kitchen</a>
-                        <a className="nav text" href="#">Bathroom</a>
+                        <a className="nav text active" href='/#'>Bedroom</a>
+                        <a className="nav text" href='/#'>Living Room</a>
+                        <a className="nav text" href='/#'>Office</a>
+                        <a className="nav text" href='/#'>Kitchen</a>
+                        <a className="nav text" href='/#'>Bathroom</a>
                     </div>
                     <div className="logo">
                         <img src={Logo} alt="" />
                     </div>
                     <div className="socialLinks">
-                        <a>
+                        <a href='/#'>
                             <LineIcon name="facebook-filled" />
                         </a>
-                        <a>
+                        <a href='/#'>
                             <LineIcon name="twitter-filled" />
                         </a>
-                        <a>
+                        <a href='/#'>
                             <LineIcon name="pinterest" />
                         </a>
                     </div>

@@ -16,7 +16,7 @@ class AllBreadcrumbs extends Component {
                     name="home" />
             </div>)
 
-        data.map((item, index) => {
+        data.forEach((item, index) => {
             retArr.push(<Breadcrumb
                 key={index}
                 text={item.text}
