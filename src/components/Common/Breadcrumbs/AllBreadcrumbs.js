@@ -1,13 +1,13 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './Breadcrumbs.css';
 import Breadcrumb from './Breadcrumb';
 import LineIcon from 'react-lineicons';
 
-class AllBreadcrumbs extends Component {
+function AllBreadcrumbs(props) {
 
-    renderCrumbs = () => {
-        const { data } = this.props;
+    function renderCrumbs() {
+        const { data } = props;
         let retArr = [];
 
         retArr.push(
@@ -26,13 +26,11 @@ class AllBreadcrumbs extends Component {
         return retArr;
     }
 
-    render() {
-        return (
-            <div className='allBreadcrumbs'>
-                {this.renderCrumbs()}
-            </div>
-        )
-    }
+    return (
+        <div className='allBreadcrumbs'>
+            {renderCrumbs()}
+        </div>
+    )
 }
 
 export default AllBreadcrumbs;

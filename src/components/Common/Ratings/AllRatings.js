@@ -1,12 +1,12 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './Rating.css';
 import Rating from './Rating';
 
-class AllRatings extends Component {
+function AllRatings(props) {
 
-    renderRatings = () => {
-        const { rating } = this.props;
+    function renderRatings() {
+        const { rating } = props;
         let count = rating;
         let retArr = [];
         for (var i = 0; i < 5; i++) {
@@ -21,13 +21,11 @@ class AllRatings extends Component {
         return retArr;
     }
 
-    render() {
-        return (
-            <div className={`allRatings`}>
-                {this.renderRatings()}
-            </div>
-        )
-    }
+    return (
+        <div className={`allRatings`}>
+            {renderRatings()}
+        </div>
+    )
 }
 
 export default AllRatings;
