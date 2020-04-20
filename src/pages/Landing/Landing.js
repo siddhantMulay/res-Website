@@ -69,11 +69,15 @@ class Landing extends Component {
             this.updateView(0, true)
         }
 
-        else if (this.isInViewport(0, this.descriptionRef.current)) {
+        else if (this.isInViewport(1, this.descriptionRef.current)) {
             this.updateView(1, true)
         }
 
-        else if (this.isInViewport(0, this.relatedProdRef.current)) {
+        else if (this.isInViewport(2, this.reviewsRef.current)) {
+            this.updateView(2, true)
+        }
+
+        else if (this.isInViewport(3, this.relatedProdRef.current)) {
             this.updateView(3, true)
         }
 
@@ -144,7 +148,7 @@ class Landing extends Component {
     isInViewport = (offset = 0, elem) => {
         if (!elem) return false;
         const top = elem.getBoundingClientRect().top;
-        return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
+        return (top + offset) >= 0 && (top - offset) <= window.innerHeight + 200;
     }
 
     render() {
