@@ -1,0 +1,27 @@
+
+@import '../../../styles/variables.scss';
+
+
+.counter {
+    background     : $counterCol;
+    width          : 105px;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+
+    i {
+        font-weight: $bold;
+        color      : $listTitleCol;
+        padding    : 14px 12px;
+        cursor     : pointer;
+        font-size  : 10px;
+    }
+
+    .count {
+        font-family: $title !important;
+        cursor     : default;
+        font-size  : 12px;
+        font-weight: $semiBold;
+        color      : $black;
+    }
+}

@@ -49,6 +49,7 @@ const config = {
         name: "Nudie Extendable Sofa for 3 persons.",
         oldPrice: "$169",
         newPrice: "$149",
+        qty: 1,
         notes: [{
             title: 'Assembly',
             desc: 'Carpenter Assembly'
@@ -56,9 +57,20 @@ const config = {
             title: 'Warranty',
             desc: "12 Months' Warranty"
         }],
-        colors: [
-            'beige', 'black', 'white'
-        ],
+        colors: [{
+            'id': 1,
+            'title': 'beige',
+            'selected': false
+        }, {
+            'id': 2,
+            'title': 'black',
+            'selected': true
+        },
+        {
+            'id': 3,
+            'title': 'white',
+            'selected': false
+        }],
         descData: [{
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

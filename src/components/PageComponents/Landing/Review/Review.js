@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Review.css';
+import './Review.scss';
 
 import AllRatings from '../../../Common/Ratings/AllRatings';
 

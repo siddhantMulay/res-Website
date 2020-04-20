@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import './Section.css';
+import './Section.scss';
 import { Tween } from 'react-gsap';
 import config from '../../../../common/utils';
 
@@ -63,9 +63,9 @@ class Section extends Component {
                             {reviewData.length} Reviews
                         </div>
                         {this.renderReviews()}
-                        <div className="loadMoreComments">
+                        {/* <div className="loadMoreComments">
                             <span>Load More</span>
-                        </div>
+                        </div> */}
                     </div>
                     :
                     <div className={`section ${suggested ? 'suggested' : null}`}>

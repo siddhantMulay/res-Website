@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Breadcrumbs.css';
+import './Breadcrumbs.scss';
 
 function Breadcrumb(props) {
     const { text, isCurrent } = props;

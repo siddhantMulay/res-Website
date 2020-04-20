@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Header.css';
+import './Header.scss';
 import Logo from '../../../assets/images/Logo.png';
 import LineIcon from 'react-lineicons';
 

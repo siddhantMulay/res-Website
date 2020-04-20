@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './MiniProductCard.css';
+import './MiniProductCard.scss';
 
 function MiniProductCard(props) {
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './SocialLinks.css';
+import './SocialLinks.scss';
 import LineIcon from 'react-lineicons';
 
 function SocialLinks() {

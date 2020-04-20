@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Footer.css'
+import './Footer.scss'
 import Logo from '../../../assets/images/LogoY.png';
 import SocialLinks from '../SocialLinks/SocialLinks'
 

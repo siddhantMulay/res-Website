@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Landing.css';
+import './Landing.scss';
 
 //Gather all the components
 import Subheader from '../../components/Common/Header/SubHeader';

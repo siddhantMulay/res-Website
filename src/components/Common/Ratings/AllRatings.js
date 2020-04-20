@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Rating.css';
+import './Rating.scss';
 import Rating from './Rating';
 
 function AllRatings(props) {

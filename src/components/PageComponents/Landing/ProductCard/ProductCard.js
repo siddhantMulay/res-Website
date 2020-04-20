@@ -1,21 +1,18 @@
 
 import React, { Component } from 'react';
-import './ProductCard.css';
+import './ProductCard.scss';
 import LineIcon from 'react-lineicons';
 import { Tween, Timeline } from 'react-gsap';
 import config from '../../../../common/utils';
 import AllRatings from '../../../Common/Ratings/AllRatings';
+import Counter from '../../../Common/Counter/Counter';
+import { updateSelectedColor, updateProdQty } from '../../../../redux/actions/productActions';
 
 class ProductCard extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            quantity: 1
-        }
+    radioCheck = (id) => {
+        updateSelectedColor(id)
     }
-
-    radioCheck = () => { }
 
     renderNotes = () => {
         const { data } = this.props;
@@ -38,17 +35,20 @@ class ProductCard extends Component {
         let retArr = [];
         if (colors.length > 0) {
             colors.forEach((item, index) => {
-                retArr.push(<div key={`color${index}`} className={`colorSelect ${item}`}>
-                    <input type="radio" name="colorsel" id="" onChange={this.radioCheck} />
-                    <div className={`checkMark ${item}`}></div>
+                retArr.push(<div key={`color${index}`} className={`colorSelect ${item.title}`}>
+                    <input type="radio" name="colorsel" id="" onChange={() => this.radioCheck(item.id)} checked={item.selected} />
+                    <div className={`checkMark ${item.title}`}></div>
                 </div>)
             });
         }
         return retArr;
     }
 
+    updateQty = (action) => {
+        updateProdQty(action);
+    }
+
     render() {
-        const { quantity } = this.state;
         const { data } = this.props;
 
         return (
@@ -120,11 +120,9 @@ class ProductCard extends Component {
                                     </div>
 
                                     <div className="cardActions">
-                                        <div className="counter">
-                                            <LineIcon name="minus" />
-                                            <span className='count'>{quantity}</span>
-                                            <LineIcon name="plus" />
-                                        </div>
+                                        <Counter
+                                            qty={data.qty}
+                                            updateQty={(action) => this.updateQty(action)} />
                                         <button className="custButton">
                                             Add to Cart
                                 </button>

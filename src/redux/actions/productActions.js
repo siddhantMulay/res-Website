@@ -10,3 +10,22 @@ export async function getProductData() {
         data: config.productData
     })
 }
+
+//Update selected Color
+export const UPDATE_SELECTED_COLOR = 'UPDATE_SELECTED_COLOR';
+export async function updateSelectedColor(id) {
+    await dataStore.dispatch({
+        type: UPDATE_SELECTED_COLOR,
+        id
+    })
+}
+
+//Update Product Quantitiy
+export const UPDATE_PROD_QTY = 'UPDATE_PROD_QTY';
+export async function updateProdQty(action) {
+    await dataStore.dispatch({
+        type: UPDATE_PROD_QTY,
+        action
+    })
+}
+

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Breadcrumbs.css';
+import './Breadcrumbs.scss';
 import Breadcrumb from './Breadcrumb';
 import LineIcon from 'react-lineicons';
 
