@@ -1,12 +1,12 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './Sidebar.css';
-import LineIcon from 'react-lineicons';
+import SocialLinks from '../SocialLinks/SocialLinks'
 
-class Sidebar extends Component {
+function Sidebar(props) {
 
-    renderSidebarItems = () => {
-        const { data, changeView } = this.props;
+    function renderSidebarItems() {
+        const { data, changeView } = props;
         let retArr = [];
         data.allData.forEach((item, index) => {
             retArr.push(<a
@@ -21,30 +21,18 @@ class Sidebar extends Component {
         return retArr;
     }
 
-    render() {
-        const { style, data } = this.props;
-        return (
-            <div className="sidebar" style={style}>
-                <div className={`currentView ${data.activeItem}`}>
-                    <span>{data.activeItem}</span>
-                </div>
-                <div className="pageNav">
-                    {this.renderSidebarItems()}
-                    <div className="socialLinks">
-                        <a href='/#'>
-                            <LineIcon name="facebook-filled" />
-                        </a>
-                        <a href='/#'>
-                            <LineIcon name="twitter-filled" />
-                        </a>
-                        <a href='/#'>
-                            <LineIcon name="pinterest" />
-                        </a>
-                    </div>
-                </div>
+    const { style, data } = props;
+    return (
+        <div className="sidebar" style={style}>
+            <div className={`currentView ${data.activeItem}`}>
+                <span>{data.activeItem}</span>
             </div>
-        )
-    }
+            <div className="pageNav">
+                {renderSidebarItems()}
+                <SocialLinks />
+            </div>
+        </div>
+    )
 }
 
 export default Sidebar;

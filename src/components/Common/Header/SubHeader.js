@@ -1,11 +1,11 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './Header.css';
 
-class SubHeader extends Component {
+function SubHeader(props) {
 
-    renderSubHeaderItems = () => {
-        const { data, changeView } = this.props;
+    function renderSubHeaderItems() {
+        const { data, changeView } = props;
         let retArr = [];
         data.allData.forEach((item, index) => {
             retArr.push(
@@ -19,13 +19,11 @@ class SubHeader extends Component {
         return retArr;
     }
 
-    render() {
-        return (
-            <div className="subHeader">
-                {this.renderSubHeaderItems()}
-            </div>
-        )
-    }
+    return (
+        <div className="subHeader">
+            {renderSubHeaderItems()}
+        </div>
+    )
 }
 
 export default SubHeader;

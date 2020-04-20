@@ -142,30 +142,6 @@ button {
     }
 }
 
-.socialLinks {
-    width  : 108px;
-    display: flex;
-
-    a {
-        display     : initial;
-        margin-right: 28px;
-        color       : $black;
-
-        &:last-child {
-            margin-right: 0px;
-        }
-
-        &:hover {
-
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
-
-    }
-}
-
 //Mobile devices
 @media screen and (max-width: 600px) {
     .pageBody {

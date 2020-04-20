@@ -1,17 +1,17 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import './ProductCard.css';
 import LineIcon from 'react-lineicons';
 import { Tween, Timeline } from 'react-gsap';
 import config from '../../../../common/utils';
 import AllRatings from '../../../Common/Ratings/AllRatings';
 
-class ProductCard extends Component {
+function ProductCard(props) {
 
-    radioCheck = () => { }
+    function radioCheck() { }
 
-    renderNotes = () => {
-        const { data } = this.props;
+    function renderNotes() {
+        const { data } = props;
         const notes = data.notes;
         let retArr = [];
         if (notes.length > 0) {
@@ -25,14 +25,14 @@ class ProductCard extends Component {
         return retArr;
     }
 
-    renderColorSelection = () => {
-        const { data } = this.props;
+    function renderColorSelection() {
+        const { data } = props;
         const colors = data.colors;
         let retArr = [];
         if (colors.length > 0) {
             colors.forEach((item, index) => {
                 retArr.push(<div key={`color${index}`} className={`colorSelect ${item}`}>
-                    <input type="radio" name="colorsel" id="" onChange={this.radioCheck} />
+                    <input type="radio" name="colorsel" id="" onChange={radioCheck} />
                     <div className={`checkMark ${item}`}></div>
                 </div>)
             });
@@ -40,8 +40,7 @@ class ProductCard extends Component {
         return retArr;
     }
 
-    render() {
-        const { data } = this.props;
+        const { data } = props;
 
         return (
             <div className="productCard">
@@ -79,7 +78,7 @@ class ProductCard extends Component {
 
                                     <div className="notes">
                                         <ul>
-                                            {this.renderNotes()}
+                                            {renderNotes()}
                                         </ul>
                                     </div>
 
@@ -107,7 +106,7 @@ class ProductCard extends Component {
                                         <div className="title">Color:</div>
 
                                         <div className="colorSelection">
-                                            {this.renderColorSelection()}
+                                            {renderColorSelection()}
                                         </div>
                                     </div>
 
@@ -130,7 +129,6 @@ class ProductCard extends Component {
 
             </div>
         )
-    }
 }
 
 export default ProductCard;

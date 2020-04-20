@@ -140,27 +140,6 @@ button.custButton {
   margin-right: 0px;
 }
 
-.socialLinks {
-  width: 108px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.socialLinks a {
-  display: initial;
-  margin-right: 28px;
-  color: #000000;
-}
-
-.socialLinks a:last-child {
-  margin-right: 0px;
-}
-
-.socialLinks a:hover::before, .socialLinks a:hover::after {
-  display: none;
-}
-
 @media screen and (max-width: 600px) {
   .pageBody {
     padding-left: 0px;
