@@ -11,7 +11,11 @@
         left       : 20%;
 
         .secContainer {
-            padding: 2rem 0;
+            padding: 2rem 0 5rem 0;
+
+            &:not(:first-child) {
+                padding-top: 5rem;
+            }
         }
     }
 }
@@ -25,7 +29,7 @@
         margin-left: 0px !important;
 
         .secContainer {
-            padding: 1rem 0!important;
+            padding: 1rem 0 !important;
         }
     }
 }

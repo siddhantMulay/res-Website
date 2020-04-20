@@ -119,6 +119,9 @@
 @media screen and (max-width: 600px) {
     .header {
         padding: 14px 15px !important;
+        width  : 100% !important;
+        left   : initial !important;
+        z-index: 4;
 
         .logo {
             height: 32px;
@@ -134,7 +137,11 @@
 //Min-Width
 @media screen and (max-width: 992px) {
     .header {
-        padding: 14px 35px;
+        padding : 14px 35px;
+        position: absolute;
+        width   : 95%;
+        left    : 50px;
+        z-index : 4;
 
 
         .iconAction {

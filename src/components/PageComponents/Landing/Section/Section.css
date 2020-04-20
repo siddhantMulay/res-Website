@@ -23,8 +23,12 @@
 
 .section {
   background: #f0f0f0;
-  margin: 4rem 0 8rem 4rem;
+  margin: 4rem 0 15rem 4rem;
   position: relative;
+}
+
+.section:last-child {
+  margin-bottom: 8rem;
 }
 
 .section .title {
@@ -193,6 +197,7 @@
     height: initial;
     margin-left: 0px;
     background: #ffffff;
+    margin-bottom: 4rem;
   }
   .section.suggested .sectionImg {
     padding: 0;
@@ -241,7 +246,6 @@
     top: initial;
     padding: 16px;
     max-width: 100%;
-    padding-right: 0px;
     background: #ffffff;
   }
 }

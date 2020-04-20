@@ -13,7 +13,11 @@
 }
 
 .landingContent .allSections .secContainer {
-  padding: 2rem 0;
+  padding: 2rem 0 5rem 0;
+}
+
+.landingContent .allSections .secContainer:not(:first-child) {
+  padding-top: 5rem;
 }
 
 @media screen and (max-width: 992px) {

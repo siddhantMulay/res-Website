@@ -63,6 +63,9 @@ class Section extends Component {
                             {reviewData.length} Reviews
                         </div>
                         {this.renderReviews()}
+                        <div className="loadMoreComments">
+                            <span>Load More</span>
+                        </div>
                     </div>
                     :
                     <div className={`section ${suggested ? 'suggested' : null}`}>

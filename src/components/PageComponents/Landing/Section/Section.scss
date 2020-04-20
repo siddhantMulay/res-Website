@@ -25,8 +25,12 @@
 
 .section {
     background: $pageBg;
-    margin    : 4rem 0 8rem 4rem;
+    margin    : 4rem 0 15rem 4rem;
     position  : relative;
+
+    &:last-child {
+        margin-bottom: 8rem;
+    }
 
     .title {
         position  : absolute;
@@ -186,6 +190,7 @@
         height          : initial;
         margin-left     : 0px;
         background      : $white;
+        margin-bottom   : 4rem;
 
         &.suggested {
             .sectionImg {
@@ -243,12 +248,11 @@
         }
 
         .desc {
-            position     : relative;
-            top          : initial;
-            padding      : 16px;
-            max-width    : 100%;
-            padding-right: 0px;
-            background   : $white;
+            position  : relative;
+            top       : initial;
+            padding   : 16px;
+            max-width : 100%;
+            background: $white;
         }
     }
 }

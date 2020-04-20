@@ -1,17 +1,24 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import './ProductCard.css';
 import LineIcon from 'react-lineicons';
 import { Tween, Timeline } from 'react-gsap';
 import config from '../../../../common/utils';
 import AllRatings from '../../../Common/Ratings/AllRatings';
 
-function ProductCard(props) {
+class ProductCard extends Component {
 
-    function radioCheck() { }
+    constructor(props) {
+        super(props)
+        this.state = {
+            quantity: 1
+        }
+    }
 
-    function renderNotes() {
-        const { data } = props;
+    radioCheck = () => { }
+
+    renderNotes = () => {
+        const { data } = this.props;
         const notes = data.notes;
         let retArr = [];
         if (notes.length > 0) {
@@ -25,14 +32,14 @@ function ProductCard(props) {
         return retArr;
     }
 
-    function renderColorSelection() {
-        const { data } = props;
+    renderColorSelection = () => {
+        const { data } = this.props;
         const colors = data.colors;
         let retArr = [];
         if (colors.length > 0) {
             colors.forEach((item, index) => {
                 retArr.push(<div key={`color${index}`} className={`colorSelect ${item}`}>
-                    <input type="radio" name="colorsel" id="" onChange={radioCheck} />
+                    <input type="radio" name="colorsel" id="" onChange={this.radioCheck} />
                     <div className={`checkMark ${item}`}></div>
                 </div>)
             });
@@ -40,7 +47,9 @@ function ProductCard(props) {
         return retArr;
     }
 
-        const { data } = props;
+    render() {
+        const { quantity } = this.state;
+        const { data } = this.props;
 
         return (
             <div className="productCard">
@@ -78,7 +87,7 @@ function ProductCard(props) {
 
                                     <div className="notes">
                                         <ul>
-                                            {renderNotes()}
+                                            {this.renderNotes()}
                                         </ul>
                                     </div>
 
@@ -106,14 +115,14 @@ function ProductCard(props) {
                                         <div className="title">Color:</div>
 
                                         <div className="colorSelection">
-                                            {renderColorSelection()}
+                                            {this.renderColorSelection()}
                                         </div>
                                     </div>
 
                                     <div className="cardActions">
                                         <div className="counter">
                                             <LineIcon name="minus" />
-                                            <span className='count'>1</span>
+                                            <span className='count'>{quantity}</span>
                                             <LineIcon name="plus" />
                                         </div>
                                         <button className="custButton">
@@ -129,6 +138,7 @@ function ProductCard(props) {
 
             </div>
         )
+    }
 }
 
 export default ProductCard;
