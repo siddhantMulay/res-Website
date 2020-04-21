@@ -14,7 +14,7 @@ function Sidebar(props) {
                 className={`text ${item.active ? 'active' : null}`}
                 key={`sb${index}`}
                 data-id={item.id}
-                href={`#${item.title}`}>
+                href={`/#${item.title}`}>
                 {item.title}
             </a>)
         });
